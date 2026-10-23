@@ -1,5 +1,7 @@
 # Reading Minds, Imagining, Then Acting: Simulating and Probing Other Agents' Latent World Models
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23601306.svg)](https://doi.org/10.5281/zenodo.23601306)
+
 Code, frozen splits, aggregate results and trained models for the MSc thesis, by Andrés Daniel Godoy Ortiz. MSc in Artificial Intelligence Applications and Innovation, Imperial College London, 2026.
 
 The thesis is in [`paper/ATOM_thesis_Godoy_2026.pdf`](paper/ATOM_thesis_Godoy_2026.pdf).
@@ -96,7 +98,12 @@ The repository holds no learner-level data of any kind, including model outputs 
 
 ## Citation
 
-See [`CITATION.cff`](CITATION.cff).
+Please cite the thesis, and this code by its archived version:
+
+- **Thesis:** Godoy Ortiz, A. D. (2026). *Reading Minds, Imagining, Then Acting: Simulating and Probing Other Agents' Latent World Models.* MSc thesis, Imperial College London.
+- **Code and models (v1.0.0):** [doi:10.5281/zenodo.23601306](https://doi.org/10.5281/zenodo.23601306). All versions: [doi:10.5281/zenodo.23601305](https://doi.org/10.5281/zenodo.23601305).
+
+[`CITATION.cff`](CITATION.cff) has the same in machine-readable form (GitHub's "Cite this repository" button reads it).
 
 The semantic encoder is adopted from the author's companion paper: Godoy Ortiz (2026), *Meaning Contracts: Local Semantic Geometry in Large Language Models*, [arXiv:2610.30715](https://arxiv.org/abs/2610.30715), with its own code at [github.com/adgodoyo/Meaning_Contracts](https://github.com/adgodoyo/Meaning_Contracts). Its results are not results of this repository.
 
