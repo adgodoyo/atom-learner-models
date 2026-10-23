@@ -1,0 +1,57 @@
+# AKT baseline via pyKT (src: pykt.models.akt.AKT). All numeric settings live here, not in
+# code. One config serves both the subsampled pilot and the full-corpus run, so a pilot
+# validates exactly the configuration the full run uses.
+
+seed: 0
+
+# AKT hyperparameters: standard defaults from the original AKT paper and pyKT's AKT class
+# signature (kq_same/final_fc_dim/num_attn_heads/separate_qa/l2 are that class's own
+# defaults; d_model/n_blocks/dropout/d_ff are the ones the class requires explicitly). Not
+# tuned for FA: the pilot checks that the config trains and lands in a plausible range; it
+# is not a hyperparameter sweep.
+model:
+  d_model: 256
+  n_blocks: 1
+  dropout: 0.05
+  d_ff: 256
+  kq_same: 1
+  final_fc_dim: 512
+  num_attn_heads: 8
+  separate_qa: false
+  l2: 0.00001
+  emb_type: "qid"
+
+# Right-truncate each learner's history to their MOST RECENT max_seq_len events (see
+# src/atom/baselines/akt_data.py docstring for why this differs from pyKT's own
+# multi-window chunking of long sequences).
+max_seq_len: 200
+
+# Pilot scope: a deterministic whole-learner subsample from the frozen TRAIN/VAL split,
+# capped at these event budgets (about 100k training interactions).
+pilot_train_event_budget: 100000
+pilot_val_event_budget: 20000
+
+epochs: 20
+lr: 0.001
+weight_decay: 0.0
+
+# Pilot gate: a pilot only has to show that the model trains, does not collapse and is
+# non-degenerate; the [0.72, 0.80] band below applies to the full run. A real run (not a
+# broken pipeline) landing below this floor would be a surprise worth stopping for.
+pilot_val_auc_floor: 0.60
+
+# Recorded alongside the pilot result for context, NOT what the pilot gates on.
+full_run_gate_auc_lo: 0.72
+full_run_gate_auc_hi: 0.80
+
+# Full run only (unused by the pilot, which fits its whole ~100k-event subsample, 282 rows,
+# in one full-batch forward pass per epoch). At full scale, multi-window chunking
+# (src/atom/baselines/akt_data.py: chunk_learner_history) turns FA's ~1.75M events into
+# ~7-8k independent chunk-rows; one forward pass over all of them would hold attention-score
+# tensors of ~7000 x 8 heads x 200 x 200 x 4 bytes =~ 9 GB each, and several such tensors
+# alive at once for backprop would exceed a 24 GB GPU. Minibatching over chunk-rows is
+# therefore a memory necessity at this scale, not a hyperparameter change, and it is also
+# what pyKT's own `train_model.py::train_model` does (`for data in train_loader:`, one
+# optimiser step per minibatch, many steps per epoch). 64 is a standard default used across
+# pyKT's example training scripts for datasets of this size; it was not swept for FA.
+full_run_batch_size: 64

@@ -1,0 +1,162 @@
+{
+  "task": "fa_sim3_eval_5e5f",
+  "evals_rows": [
+    "5e",
+    "5f"
+  ],
+  "generation_mode_scored": "conditional_imitation",
+  "n_generation_rows": 300,
+  "n_arms": 4,
+  "matrix": {
+    "personalised": {
+      "exact_match_teacher_forced": 0.6244725738396625,
+      "token_change_distance_teacher_forced": 0.1206673170403858,
+      "exact_match_free_generation": 0.5733333333333334,
+      "normalised_edit_distance_free_generation": 0.2557398944846484,
+      "codec_semantic_similarity_free_generation": 0.9536548038920868
+    },
+    "dw0": {
+      "exact_match_teacher_forced": 0.0,
+      "token_change_distance_teacher_forced": 0.6779744158870806,
+      "exact_match_free_generation": 0.0,
+      "normalised_edit_distance_free_generation": 0.9511725311733377,
+      "codec_semantic_similarity_free_generation": 0.4912380283203792
+    },
+    "shuffled_u": {
+      "exact_match_teacher_forced": 0.6182439220413904,
+      "token_change_distance_teacher_forced": 0.12256691825195887,
+      "exact_match_free_generation": 0.57,
+      "normalised_edit_distance_free_generation": 0.26720702677522373,
+      "codec_semantic_similarity_free_generation": 0.950959671175702
+    },
+    "u_mean": {
+      "exact_match_teacher_forced": 0.631303998392606,
+      "token_change_distance_teacher_forced": 0.11746137749045604,
+      "exact_match_free_generation": 0.5733333333333334,
+      "normalised_edit_distance_free_generation": 0.26461789891199544,
+      "codec_semantic_similarity_free_generation": 0.9514521102842025
+    }
+  },
+  "paired_ci_learner_clustered": {
+    "exact_match_free_generation": {
+      "dw0": {
+        "point_delta": 0.5733333333333334,
+        "ci95": [
+          0.52,
+          0.6334166666666665
+        ],
+        "excludes_zero": true,
+        "n_boot": 1000,
+        "n_learners": 300,
+        "n_rows": 300,
+        "lower_is_better": false
+      },
+      "shuffled_u": {
+        "point_delta": 0.0033333333333334103,
+        "ci95": [
+          -0.030000000000000027,
+          0.036666666666666625
+        ],
+        "excludes_zero": false,
+        "n_boot": 1000,
+        "n_learners": 300,
+        "n_rows": 300,
+        "lower_is_better": false
+      },
+      "u_mean": {
+        "point_delta": 0.0,
+        "ci95": [
+          -0.026666666666666727,
+          0.026749999999999982
+        ],
+        "excludes_zero": false,
+        "n_boot": 1000,
+        "n_learners": 300,
+        "n_rows": 300,
+        "lower_is_better": false
+      }
+    },
+    "normalised_edit_distance_free_generation": {
+      "dw0": {
+        "point_delta": -0.6954326366886893,
+        "ci95": [
+          -0.7350233616852989,
+          -0.6554224546194515
+        ],
+        "excludes_zero": true,
+        "n_boot": 1000,
+        "n_learners": 300,
+        "n_rows": 300,
+        "lower_is_better": true
+      },
+      "shuffled_u": {
+        "point_delta": -0.011467132290575333,
+        "ci95": [
+          -0.03528230649322803,
+          0.009929963374420982
+        ],
+        "excludes_zero": false,
+        "n_boot": 1000,
+        "n_learners": 300,
+        "n_rows": 300,
+        "lower_is_better": true
+      },
+      "u_mean": {
+        "point_delta": -0.008878004427347042,
+        "ci95": [
+          -0.02695808091580887,
+          0.009019974364989962
+        ],
+        "excludes_zero": false,
+        "n_boot": 1000,
+        "n_learners": 300,
+        "n_rows": 300,
+        "lower_is_better": true
+      }
+    },
+    "codec_semantic_similarity_free_generation": {
+      "dw0": {
+        "point_delta": 0.4624167755717076,
+        "ci95": [
+          0.4394941499379302,
+          0.4850976893795337
+        ],
+        "excludes_zero": true,
+        "n_boot": 1000,
+        "n_learners": 300,
+        "n_rows": 300,
+        "lower_is_better": false
+      },
+      "shuffled_u": {
+        "point_delta": 0.002695132716384774,
+        "ci95": [
+          -0.0032946241542980426,
+          0.009346031987026118
+        ],
+        "excludes_zero": false,
+        "n_boot": 1000,
+        "n_learners": 300,
+        "n_rows": 300,
+        "lower_is_better": false
+      },
+      "u_mean": {
+        "point_delta": 0.0022026936078842763,
+        "ci95": [
+          -0.004328455854571009,
+          0.008651826919417927
+        ],
+        "excludes_zero": false,
+        "n_boot": 1000,
+        "n_learners": 300,
+        "n_rows": 300,
+        "lower_is_better": false
+      }
+    }
+  },
+  "join_correctness_canary": {
+    "n_rows_checked": 1200,
+    "n_mismatch": 0
+  },
+  "elapsed_s": 940.7423539161682,
+  "DEVELOPMENTAL_BASELINE_NOT_A_THESIS_CLAIM": true
+}

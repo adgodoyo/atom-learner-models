@@ -1,0 +1,65 @@
+# Filter-body bake-off SCREEN on the cleaned v2 FA substrate.
+# Body (a) GRU vs body (c) causal event-transformer + its three pre-registered bias
+# ablations. This is a SCREEN on cached features, not the final choice of body: that is
+# made under the full objective, through the backbone.
+# Architecture sizes (codec_dim / episode_hidden / filter_hidden / latent_dim / k_train /
+# k_eval / free_bits / kl_*) are READ FROM configs/s1_filter.yaml, never duplicated here, so
+# the two bodies cannot drift apart and latent_dim stays fixed at 32 for both.
+# calib_frac / min_interactions come from configs/irt.yaml, the same evaluation protocol
+# as the v2 baselines.
+
+seed: 0
+
+# -- body (c) architecture -----------------------------------------------------------------
+n_heads: 4        # filter_hidden (64) must be divisible by this
+d_ff: 64          # chosen so the transformer body matches the GRU body's parameter count:
+                  # 29,440 vs 29,120 = +1.1% (asserted below and by
+                  # tests/test_event_transformer.py). Single-layer is the consequence of the
+                  # matched budget, deliberately: depth would have to be bought by narrowing
+                  # d_model, and REACH-BACK is a one-hop retrieval.
+n_rbf: 8          # radial-basis resolution per bias channel; costs n_heads*n_rbf params each
+param_budget_tol: 0.10   # |n_c - n_gru| / n_gru must not exceed this (matched parameter budget)
+
+# -- arms ------------------------------------------------------------------------------------
+# "gru" is body (a). The other four are body (c): the full arm plus the three pre-registered
+# ablations that make the screen a mechanism claim whichever body wins.
+arms: ["gru", "c_distance_time", "c_distance", "c_time", "c_none"]
+
+# -- training (IDENTICAL for every arm -- same seed, same data, same optimiser) ---------------
+# NOTE the regime differs from the GRU filter's own training, which ran 400 FULL-BATCH steps
+# (400 gradient updates total); the report states this. Body (c) is O(T^2) in memory, so it
+# must minibatch, and a minibatch regime is not comparable to a full-batch one. Both arms
+# therefore train under THIS regime -- the fair comparison, and also a better use of the
+# same wall-clock (110 updates per epoch instead of 1).
+batch_learners: 32
+epochs: 12
+lr: 1.0e-3
+grad_clip: 1.0
+warmup_frac: 0.0  # diagnostic (--warmup): linear LR warmup over this fraction of
+                  # steps, then constant. 0.0 = the main screen's setting, so that run stays
+                  # reproducible bit-for-bit. Applied to BOTH arms identically when set --
+                  # it exists to test whether the screen's result is confounded with an
+                  # optimiser configuration chosen for a GRU, NOT to give (c) a tuning
+                  # advantage the incumbent does not get.
+support_weight: 1.0     # joint 4-class support CE relative to correctness BCE
+
+pilot_n_learners: 200   # pilot first, extrapolate measured wall-clock, then the full run
+pilot_epochs: 3
+
+# -- the frozen judge -------------------------------------------------------------------------
+strata_artifact: artifacts/fa_02_strata_v2.npz   # written by scripts/fa_02a_strata_v2.py
+                                                  # BEFORE any arm trains
+bootstrap_n: 2000        # paired percentile bootstrap
+ci_alpha: 0.05
+
+# -- gates --------------------------------------------------------------------------------------
+# This is a SCREEN: no arm "fails" for losing. What is gated is that the screen was run
+# correctly and is interpretable.
+max_wall_s: 10800        # 3 h for all five arms; beyond this, stop and re-plan rather than grind
+gru_reference_auc: 0.786 # the v2 GRU filter's marginal VAL AUC (reports/fa_01_s1v2.md). A
+                          # REFERENCE, not an identity check: the screen changes the objective
+                          # (joint support CE replaces the two engagement BCEs) and the
+                          # optimisation regime (minibatch, not full-batch), so a delta here is
+                          # expected and is reported, not gated.
+gru_reference_tol: 0.05  # the GRU arm landing further than this from the reference means the
+                          # harness, not the objective, changed -- that WOULD invalidate the screen

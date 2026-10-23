@@ -1,0 +1,98 @@
+# S1 filter (pilot and full run): episode encoder + GRU + FiLM correctness/engagement heads
+# on cached codec features. No backbone forwards (those belong to the simulator proper).
+# All numeric settings live here, not in code.
+
+pilot_n_learners: 200
+pilot_seed: 7              # picks WHICH train-split learners for the pilot, not init
+
+codec_dim: 45              # artifacts/problem_codec_mean_L15.npz (the frozen codec configuration)
+episode_hidden: 64
+filter_hidden: 64
+latent_dim: 32             # bottom of the documented range u in R^{32-64}
+
+epochs: 150
+lr: 3.0e-3
+seed: 0                    # model init / training-time sampling
+
+engagement_weight: 1.0     # engagement BCE relative to correctness BCE in the total loss
+kl_weight_max: 0.1         # ELBO KL term ceiling (mild regulariser, not dominant -- there is
+                            # no learned cold-start prior, so N(0,I) is a crude stand-in)
+kl_anneal_epochs: 30       # linear ramp 0 -> kl_weight_max, then held (avoids early collapse)
+free_bits: 0.1             # nats/dim floor on the KL term (posterior-collapse guard)
+
+k_train: 1                 # K=1-2 belief samples during training
+k_eval: 8                  # 8 at inference, for person-epistemic spread
+
+late_window_frac: 0.8      # diagnostic-only in-sample split point (t >= this fraction of a
+                            # learner's OWN length) -- these are TRAIN learners, so this is
+                            # NOT a held-out generalisation number, just an eyeball check that
+                            # prediction quality holds up on the least-seen part of each
+                            # learner's own history. The real held-out comparison is the full
+                            # run, on frozen val/test learners via
+                            # src/atom/eval/protocol.calib_eval_split.
+
+# Loss-spike tripwire (src/atom/utils/logging.LossSpikeTripwire)
+spike_factor: 3.0
+spike_window: 50
+spike_patience: 50
+
+# Pilot gate: trains < 30 min; loss curves sane; no collapse.
+max_wall_s: 1800            # < 30 min
+collapse_threshold: 0.1     # "per-learner latent std > 0.1 of prior" (prior std = 1.0);
+                            # operationalised as TWO readings, both gated (see script
+                            # docstring): cross-learner (does mu differ between people) and
+                            # within-learner (does mu move over one person's own history).
+
+# -- Full run: same architecture/hyperparameters above, all 4000 TRAIN learners, evaluated
+# on the 500 VAL learners; test stays untouched until the final report. No wall-clock gate,
+# but checkpointed periodically so the run is resumable.
+full_epochs: 400            # rather than the pilot's 150: at 150 epochs the correctness loss
+                            # was still decreasing epoch-over-epoch at cutoff, the usual
+                            # undertraining signature for a config carried over from a
+                            # 20x-smaller pilot. Everything else is unchanged and the result
+                            # is judged on VAL; this is not a retune to force a gate. If the
+                            # remaining margins do not close, the filter-body bake-off (GRU vs
+                            # event-transformer), not more epochs, is the next test.
+checkpoint_every: 50        # epochs between checkpoints (resumable if killed)
+
+# S1's held-out eval-time context length: how much of each val learner's OWN chronological
+# history it may condition on before being scored, expressed as calib_eval_split's
+# calib_frac. Set equal to configs/irt.yaml's CANONICAL calib_frac (0.5) so the "beats IRT"
+# comparison is on identical cells with a matched context window -- read from irt.yaml at
+# run time (not duplicated here as a second literal) so the two configs cannot drift apart.
+
+cold_start_early_t: 10      # "cold" window: t<=10 ...
+cold_start_late_t: 100      # ... "late" window: t>=100, both on VAL, from t=0 (NOT calib-
+                            # gated -- cold-start is explicitly about zero-context predictions,
+                            # the region calib_eval_split's eval-half excludes by construction)
+
+# Gate 1 is two absolute claims rather than a single delta (late AUC - cold AUC >= 0.05),
+# because a delta gate structurally penalises a strong population-level prior: a better
+# zero-context floor would make the same-shaped gate HARDER to pass while the system gets
+# strictly better (see the full-run script's docstring). The two claims:
+cold_evidence_margin: 0.0   # (a) S1's zero-context AUC on val's cold window must be >= an
+                            # IRT baseline that ALSO has zero personal evidence (item
+                            # difficulty only, theta fixed at the prior 0 -- NOT the
+                            # calibrated IRT number used in gate 2, which has personal
+                            # evidence from a different window). Margin 0 = "at least as
+                            # good as", since the interesting claim is competitiveness, not
+                            # beating it outright.
+lift_bootstrap_n: 5000      # (b) mean per-learner (cold err - late err) must be > 0 AND its
+lift_ci_alpha: 0.05         # 95% percentile-bootstrap CI lower bound must exceed 0 -- i.e.
+                            # personal evidence significantly reduces error, not just on
+                            # average by chance. err = mean |y - p(correct)| per learner.
+
+spread_error_min_corr: 0.10 # Spearman(K-sample spread, |error|) >= this ...
+spread_error_max_p: 0.01    # ... AND p-value below this (provisional thresholds)
+
+irt_beat_margin: 0.01       # S1 val AUC must exceed IRT's (same protocol, same cells) by this
+
+peek_margin: 0.01           # prequential peek-canary: shifting the belief one step ahead
+                            # (so it has seen the very outcome being "predicted") must raise
+                            # AUC by at least this much on the same cells -- proves the AUC
+                            # metric would actually catch a real leak if one existed. Set
+                            # equal to irt_beat_margin as a low, easy-to-clear bar clearly
+                            # above sampling noise at this cell count -- genuine leakage
+                            # typically produces a much larger jump, so this is deliberately
+                            # lenient toward the canary, strict toward calling a miss a real
+                            # problem.

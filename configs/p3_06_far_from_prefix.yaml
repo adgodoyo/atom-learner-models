@@ -1,0 +1,17 @@
+# Far-from-prefix slice. No retraining: scores a frozen S1 filter checkpoint (the same one
+# the OU-kernel ablation's kernel-off arm reuses) on a stratification of its own VAL
+# predictions. codec_dim/episode_hidden/filter_hidden/latent_dim/k_eval come from
+# configs/s1_filter.yaml (the checkpoint's own architecture); calib_frac/min_interactions
+# come from configs/irt.yaml, so the "ALL" stratum here is the identical cell set on which
+# the S1 validation AUC (0.791) was computed.
+
+source_run_id: "20260720T055014-d48ba4"
+seed: 0
+
+recency_window: 20   # d_rec(t): distance from s_q(t) to the mean of the last N prefix items
+
+bootstrap_n: 5000     # paired percentile bootstrap, the same convention as the planner replays
+ci_alpha: 0.05
+
+reach_back_power_floor: 2000   # below this many REACH-BACK cells, a body comparison on that
+                                # stratum is underpowered, and that must be stated in advance

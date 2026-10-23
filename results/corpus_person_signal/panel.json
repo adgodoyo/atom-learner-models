@@ -1,0 +1,96 @@
+{
+ "seeds": {
+  "split_half": 0,
+  "value_of_k": 1
+ },
+ "reps": {
+  "split_half": 25,
+  "value_of_k": 30
+ },
+ "min_items": {
+  "variance_panel": 20,
+  "value_of_k": 45
+ },
+ "variance_decomposition": [
+  {
+   "corpus": "CodeWorkout - first submissions",
+   "n_events": 39675,
+   "n_learners": 864,
+   "n_items": 50,
+   "median_items_per_learner": 50.0,
+   "base_rate": 0.3714,
+   "split_half_r": 0.8671,
+   "reliability_spearman_brown": 0.9288,
+   "var_total": 0.2335,
+   "pct_variance_item": 6.19,
+   "pct_variance_person": 23.64,
+   "person_to_item_ratio": 3.821
+  },
+  {
+   "corpus": "FoundationalASSIST - first exposures (all)",
+   "n_events": 1658796,
+   "n_learners": 5000,
+   "n_items": 3359,
+   "median_items_per_learner": 331.0,
+   "base_rate": 0.6132,
+   "split_half_r": 0.9619,
+   "reliability_spearman_brown": 0.9806,
+   "var_total": 0.2372,
+   "pct_variance_item": 18.1,
+   "pct_variance_person": 12.27,
+   "person_to_item_ratio": 0.678
+  },
+  {
+   "corpus": "FoundationalASSIST - first exposures, give-ups removed",
+   "n_events": 1291801,
+   "n_learners": 4999,
+   "n_items": 3335,
+   "median_items_per_learner": 268.0,
+   "base_rate": 0.7872,
+   "split_half_r": 0.8383,
+   "reliability_spearman_brown": 0.9121,
+   "var_total": 0.1675,
+   "pct_variance_item": 18.67,
+   "pct_variance_person": 4.6,
+   "person_to_item_ratio": 0.247
+  }
+ ],
+ "value_of_k": [
+  {
+   "corpus": "CodeWorkout - first submissions",
+   "n_learners": 631,
+   "curve": {
+    "1": 0.4658,
+    "2": 0.5924,
+    "3": 0.6595,
+    "5": 0.7463,
+    "10": 0.8252,
+    "20": 0.8745
+   }
+  },
+  {
+   "corpus": "FoundationalASSIST - first exposures (all)",
+   "n_learners": 4999,
+   "curve": {
+    "1": 0.3645,
+    "2": 0.4868,
+    "3": 0.5607,
+    "5": 0.6576,
+    "10": 0.7759,
+    "20": 0.8637
+   }
+  },
+  {
+   "corpus": "FoundationalASSIST - first exposures, give-ups removed",
+   "n_learners": 4999,
+   "curve": {
+    "1": 0.2027,
+    "2": 0.2782,
+    "3": 0.3343,
+    "5": 0.4114,
+    "10": 0.5366,
+    "20": 0.6602
+   }
+  }
+ ]
+}

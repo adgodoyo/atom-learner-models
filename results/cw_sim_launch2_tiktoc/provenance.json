@@ -1,0 +1,9 @@
+{
+  "substrate_name": "ratchet-cwsim/refreshed-head",
+  "base_checkpoint": "results/cw_sim_base_run/final.pt",
+  "base_checkpoint_sha256": "0ce8b060a8178331ad99c002328a4e6fa395209ed67d6d26bd16e722a4ba017f",
+  "head_checkpoint": "results/cw_sim_head_refresh/final.pt",
+  "head_checkpoint_sha256": "e32b85e69722e56bf53f88ec0acb4ca214f0e259321323659de94368505f0022",
+  "outcome_head_source": "head_checkpoint (refreshed, item 8)",
+  "attempt_encoder_filt_hyper_bases_test_vector_head_source": "base_checkpoint (item 7/base run)"
+}

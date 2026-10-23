@@ -1,0 +1,43 @@
+# OU forgetting-kernel on/off ablation. Trains the "kernel-on" arm fresh (S1Filter +
+# FiLMHeads + OUKernel, hyperparameters identical to the frozen S1 filter config below);
+# "kernel-off" reuses the already-trained S1 filter checkpoint directly (architecturally,
+# kernel-off is exactly that model, with no OU adjustment applied, so no separate training
+# run is needed for that arm). All numeric settings live here, not in code.
+
+# -- identical to configs/s1_filter.yaml's frozen values, so both arms share every
+# hyperparameter except the presence of the OU module -- a true ablation, not two configs
+# that happen to differ in other ways too.
+codec_dim: 45
+episode_hidden: 64
+filter_hidden: 64
+latent_dim: 32
+epochs: 400
+lr: 3.0e-3
+seed: 0
+engagement_weight: 1.0
+kl_weight_max: 0.1
+kl_anneal_epochs: 30
+free_bits: 0.1
+k_train: 1
+k_eval: 8
+spike_factor: 3.0
+spike_window: 50
+spike_patience: 50
+checkpoint_every: 50
+
+# -- measured, not assumed: FA inter-event gaps are heavily concentrated near zero
+# (median ~1.4 minutes -- same-session) with a long real tail (p99 ~15 days, max ~690 days).
+# 7 days is comfortably past the p90 (~2 days) -- a genuinely "long, stale" gap -- while still
+# leaving ~5,100 VAL events (~3%) in the slice, enough for a stable 10-bin ECE.
+long_gap_threshold_days: 7.0
+ece_bins: 10
+
+# Kernel-off baseline: the S1 filter run this ablation compares against (architecturally
+# identical minus the OU module; reused rather than retrained, since "off" is exactly what
+# that run is).
+kernel_off_source_run_id: "20260720T055014-d48ba4"
+
+# Gate: kernel ECE <= no-kernel ECE on the long-gap slice, with a small tolerance for
+# decimal noise rather than a hard >= 0 cliff: the kernel must not be WORSE by more than
+# ece_tolerance.
+ece_tolerance: 0.002

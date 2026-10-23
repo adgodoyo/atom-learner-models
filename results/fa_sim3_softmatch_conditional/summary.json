@@ -1,0 +1,266 @@
+{
+  "normalised_edit_distance_free|dw0|ALL": {
+    "point_delta": -0.6954326366886893,
+    "ci95": [
+      -0.7353283592849742,
+      -0.653319307037951
+    ],
+    "excludes_zero": true,
+    "n_boot": 2000,
+    "n_learners": 300,
+    "n_rows": 300
+  },
+  "normalised_edit_distance_free|dw0|P_MISS": {
+    "point_delta": -0.3372664417461052,
+    "ci95": [
+      -0.3841564803059737,
+      -0.2888885717640683
+    ],
+    "excludes_zero": true,
+    "n_boot": 2000,
+    "n_learners": 128,
+    "n_rows": 128
+  },
+  "normalised_edit_distance_free|dw0|BOTH_MISS": {
+    "point_delta": -0.3372664417461052,
+    "ci95": [
+      -0.3841564803059737,
+      -0.2888885717640683
+    ],
+    "excludes_zero": true,
+    "n_boot": 2000,
+    "n_learners": 128,
+    "n_rows": 128
+  },
+  "normalised_edit_distance_free|dw0|NONE_MATCH": {
+    "point_delta": -0.3057916082188866,
+    "ci95": [
+      -0.35992660177328695,
+      -0.2514146762556672
+    ],
+    "excludes_zero": true,
+    "n_boot": 2000,
+    "n_learners": 112,
+    "n_rows": 112
+  },
+  "normalised_edit_distance_free|shuffled_u|ALL": {
+    "point_delta": -0.011467132290575333,
+    "ci95": [
+      -0.03362401712216308,
+      0.010214748629607811
+    ],
+    "excludes_zero": false,
+    "n_boot": 2000,
+    "n_learners": 300,
+    "n_rows": 300
+  },
+  "normalised_edit_distance_free|shuffled_u|P_MISS": {
+    "point_delta": 0.03812791510422042,
+    "ci95": [
+      0.00737222373222877,
+      0.07009558680326444
+    ],
+    "excludes_zero": true,
+    "n_boot": 2000,
+    "n_learners": 128,
+    "n_rows": 128
+  },
+  "normalised_edit_distance_free|shuffled_u|BOTH_MISS": {
+    "point_delta": 0.0044276305995774035,
+    "ci95": [
+      -0.022638331571140917,
+      0.03233614594958602
+    ],
+    "excludes_zero": false,
+    "n_boot": 2000,
+    "n_learners": 116,
+    "n_rows": 116
+  },
+  "normalised_edit_distance_free|shuffled_u|NONE_MATCH": {
+    "point_delta": 0.0035353400957808256,
+    "ci95": [
+      -0.02451608983537814,
+      0.030360481332954017
+    ],
+    "excludes_zero": false,
+    "n_boot": 2000,
+    "n_learners": 112,
+    "n_rows": 112
+  },
+  "normalised_edit_distance_free|u_mean|ALL": {
+    "point_delta": -0.008878004427347042,
+    "ci95": [
+      -0.026173818984138304,
+      0.00849820764378404
+    ],
+    "excludes_zero": false,
+    "n_boot": 2000,
+    "n_learners": 300,
+    "n_rows": 300
+  },
+  "normalised_edit_distance_free|u_mean|P_MISS": {
+    "point_delta": 0.022372515665072035,
+    "ci95": [
+      -0.0032721871977570757,
+      0.048567117188567585
+    ],
+    "excludes_zero": false,
+    "n_boot": 2000,
+    "n_learners": 128,
+    "n_rows": 128
+  },
+  "normalised_edit_distance_free|u_mean|BOTH_MISS": {
+    "point_delta": -0.005256585555842519,
+    "ci95": [
+      -0.025454280493179746,
+      0.013359551852160968
+    ],
+    "excludes_zero": false,
+    "n_boot": 2000,
+    "n_learners": 119,
+    "n_rows": 119
+  },
+  "normalised_edit_distance_free|u_mean|NONE_MATCH": {
+    "point_delta": -0.004053259407984844,
+    "ci95": [
+      -0.02517944595037814,
+      0.015646923295002113
+    ],
+    "excludes_zero": false,
+    "n_boot": 2000,
+    "n_learners": 112,
+    "n_rows": 112
+  },
+  "sim_vs_real_free|dw0|ALL": {
+    "point_delta": 0.4624167755717076,
+    "ci95": [
+      0.43983540656587206,
+      0.48588533497305847
+    ],
+    "excludes_zero": true,
+    "n_boot": 2000,
+    "n_learners": 300,
+    "n_rows": 300
+  },
+  "sim_vs_real_free|dw0|P_MISS": {
+    "point_delta": 0.40310584828062634,
+    "ci95": [
+      0.3676639061265432,
+      0.438653071542262
+    ],
+    "excludes_zero": true,
+    "n_boot": 2000,
+    "n_learners": 128,
+    "n_rows": 128
+  },
+  "sim_vs_real_free|dw0|BOTH_MISS": {
+    "point_delta": 0.40310584828062634,
+    "ci95": [
+      0.3676639061265432,
+      0.438653071542262
+    ],
+    "excludes_zero": true,
+    "n_boot": 2000,
+    "n_learners": 128,
+    "n_rows": 128
+  },
+  "sim_vs_real_free|dw0|NONE_MATCH": {
+    "point_delta": 0.3934374984783189,
+    "ci95": [
+      0.35526292059973047,
+      0.43199744594829054
+    ],
+    "excludes_zero": true,
+    "n_boot": 2000,
+    "n_learners": 112,
+    "n_rows": 112
+  },
+  "sim_vs_real_free|shuffled_u|ALL": {
+    "point_delta": 0.002695132716384774,
+    "ci95": [
+      -0.0035897902694314284,
+      0.009091893852355454
+    ],
+    "excludes_zero": false,
+    "n_boot": 2000,
+    "n_learners": 300,
+    "n_rows": 300
+  },
+  "sim_vs_real_free|shuffled_u|P_MISS": {
+    "point_delta": -0.005254886421301563,
+    "ci95": [
+      -0.017315243723900385,
+      0.006226482032616635
+    ],
+    "excludes_zero": false,
+    "n_boot": 2000,
+    "n_learners": 128,
+    "n_rows": 128
+  },
+  "sim_vs_real_free|shuffled_u|BOTH_MISS": {
+    "point_delta": 0.0010924248502620637,
+    "ci95": [
+      -0.011455229055783856,
+      0.013809457561524834
+    ],
+    "excludes_zero": false,
+    "n_boot": 2000,
+    "n_learners": 116,
+    "n_rows": 116
+  },
+  "sim_vs_real_free|shuffled_u|NONE_MATCH": {
+    "point_delta": 0.0011156497000941457,
+    "ci95": [
+      -0.01173396428531528,
+      0.013214864461420483
+    ],
+    "excludes_zero": false,
+    "n_boot": 2000,
+    "n_learners": 112,
+    "n_rows": 112
+  },
+  "sim_vs_real_free|u_mean|ALL": {
+    "point_delta": 0.0022026936078842763,
+    "ci95": [
+      -0.004075540748121312,
+      0.008250743903675447
+    ],
+    "excludes_zero": false,
+    "n_boot": 2000,
+    "n_learners": 300,
+    "n_rows": 300
+  },
+  "sim_vs_real_free|u_mean|P_MISS": {
+    "point_delta": -0.004457221438538772,
+    "ci95": [
+      -0.01660792640734908,
+      0.007995256391002048
+    ],
+    "excludes_zero": false,
+    "n_boot": 2000,
+    "n_learners": 128,
+    "n_rows": 128
+  },
+  "sim_vs_real_free|u_mean|BOTH_MISS": {
+    "point_delta": 0.00042330430184234213,
+    "ci95": [
+      -0.011502215572647346,
+      0.012070978689443316
+    ],
+    "excludes_zero": false,
+    "n_boot": 2000,
+    "n_learners": 119,
+    "n_rows": 119
+  },
+  "sim_vs_real_free|u_mean|NONE_MATCH": {
+    "point_delta": 0.0002970925715091166,
+    "ci95": [
+      -0.012525232165541286,
+      0.0134490695405965
+    ],
+    "excludes_zero": false,
+    "n_boot": 2000,
+    "n_learners": 112,
+    "n_rows": 112
+  }
+}

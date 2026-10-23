@@ -1,0 +1,64 @@
+{
+  "status": "complete",
+  "metric_direction": "lower_is_better",
+  "bar": "sim_actor beats random and every blind heuristic on real held-out replay",
+  "bar_pass": false,
+  "policies": {
+    "sim_actor": [
+      0.24668477711260753,
+      0.17105536858389425,
+      0.3411014135769413
+    ],
+    "random": [
+      0.343498742552233,
+      0.24345285708168338,
+      0.45972769434149713
+    ],
+    "greedy_epig": [
+      0.20524611269086343,
+      0.15506432547749227,
+      0.264398146864108
+    ],
+    "max_entropy": [
+      0.28276404028358615,
+      0.20778166360777037,
+      0.3621554318625325
+    ],
+    "difficulty_matched": [
+      0.2967364522259529,
+      0.23113714780632608,
+      0.3681243408981744
+    ],
+    "replay_actor_reference": null
+  },
+  "comparisons": {
+    "difficulty_matched": {
+      "beats": false,
+      "actor_minus_comparator": -0.05005167511334538
+    },
+    "greedy_epig": {
+      "beats": false,
+      "actor_minus_comparator": 0.0414386644217441
+    },
+    "max_entropy": {
+      "beats": false,
+      "actor_minus_comparator": -0.03607926317097862
+    },
+    "random": {
+      "beats": false,
+      "actor_minus_comparator": -0.09681396543962548
+    }
+  },
+  "real_rows_in_training": 0,
+  "real_rows_in_selection": 0,
+  "exam_source": "real_heldout_replay",
+  "disclosures": [
+    "Outcome-faithful/style-generic environment (probe 0.62\u20130.65, panel C \u0394\u22480.0005).",
+    "Stationarity within the diagnostic session is assumed: b_full defines the student-as-of-now, and imagined answers are drawn from that student \u2014 'what would they do if asked today' \u2014 not from their historical selves. The measured size of the historical-drift caveat is V3's 0.7225, disclosed beside every curve; within-session learning from the asked questions themselves is the action-effect channel, explicitly outside this claim's scope.",
+    "b_full plays the part the real student plays at deployment \u2014 it generates answers and defines success; it is never an input to the deployed policy."
+  ],
+  "start": 3,
+  "budget": 5,
+  "n_learners": 109,
+  "primary": "sim_actor_vs_random"
+}

@@ -1,0 +1,162 @@
+{
+  "n_items_irt": 2375,
+  "n_items_with_codec": 2375,
+  "n_probe_train_items": 2019,
+  "n_heldout_items": 356,
+  "min_responses_per_item": 50,
+  "irt_scale": {
+    "b_sd": 0.7542436122894287,
+    "b_min": -2.5298235416412354,
+    "b_max": 1.7803380489349365,
+    "a_sd": 0.15689340233802795,
+    "a_min": 0.4835260510444641,
+    "a_max": 1.4493893384933472
+  },
+  "paper_scale_note": "paper reports b in [-1.35, 0.91], a in [0.01, 0.91]",
+  "difficulty_b": {
+    "ridge": {
+      "r2_heldout_items": 0.23436665635540732,
+      "spearman": 0.4893476509217477,
+      "pairwise": {
+        "all(|db|>=0.1)": {
+          "n_pairs": 18528,
+          "accuracy": 0.6796740069084629
+        },
+        "paper_small(0.1-0.5)": {
+          "n_pairs": 5478,
+          "accuracy": 0.5640744797371303
+        },
+        "paper_medium(0.5-1.0)": {
+          "n_pairs": 5672,
+          "accuracy": 0.6669605077574048
+        },
+        "paper_large(>1.0)": {
+          "n_pairs": 7378,
+          "accuracy": 0.7752778530767146
+        },
+        "ours_tercile_1(<0.48)": {
+          "n_pairs": 6642,
+          "accuracy": 0.5548027702499247
+        },
+        "ours_tercile_2(0.48-1.08)": {
+          "n_pairs": 6642,
+          "accuracy": 0.6683227943390545
+        },
+        "ours_tercile_3(>1.08)": {
+          "n_pairs": 6643,
+          "accuracy": 0.7827788649706457
+        }
+      }
+    },
+    "mlp": {
+      "r2_heldout_items": 0.33376819105492916,
+      "spearman": 0.5891802353021333,
+      "pairwise": {
+        "all(|db|>=0.1)": {
+          "n_pairs": 18546,
+          "accuracy": 0.7235522484632805
+        },
+        "paper_small(0.1-0.5)": {
+          "n_pairs": 5492,
+          "accuracy": 0.5985069191551348
+        },
+        "paper_medium(0.5-1.0)": {
+          "n_pairs": 5639,
+          "accuracy": 0.7004788082993438
+        },
+        "paper_large(>1.0)": {
+          "n_pairs": 7415,
+          "accuracy": 0.833715441672286
+        },
+        "ours_tercile_1(<0.48)": {
+          "n_pairs": 6651,
+          "accuracy": 0.5719440685611187
+        },
+        "ours_tercile_2(0.48-1.08)": {
+          "n_pairs": 6653,
+          "accuracy": 0.70584698632196
+        },
+        "ours_tercile_3(>1.08)": {
+          "n_pairs": 6652,
+          "accuracy": 0.8421527360192423
+        }
+      }
+    },
+    "chance": {
+      "pairwise_accuracy": 0.5
+    }
+  },
+  "discrimination_a": {
+    "ridge": {
+      "r2_heldout_items": 0.06621122375393385,
+      "spearman": 0.26776179452947857,
+      "pairwise": {
+        "all(|da|>=0.1)": {
+          "n_pairs": 13167,
+          "accuracy": 0.6220095693779905
+        },
+        "paper_small(0.1-0.5)": {
+          "n_pairs": 12686,
+          "accuracy": 0.6200536023963424
+        },
+        "paper_medium(0.5-1.0)": {
+          "n_pairs": 481,
+          "accuracy": 0.6735966735966736
+        },
+        "paper_large(>1.0)": {
+          "n_pairs": 0,
+          "accuracy": null
+        },
+        "ours_tercile_1(<0.10)": {
+          "n_pairs": 6648,
+          "accuracy": 0.5358002406738869
+        },
+        "ours_tercile_2(0.10-0.22)": {
+          "n_pairs": 6648,
+          "accuracy": 0.5679903730445247
+        },
+        "ours_tercile_3(>0.22)": {
+          "n_pairs": 6648,
+          "accuracy": 0.6734356197352587
+        }
+      }
+    },
+    "mlp": {
+      "r2_heldout_items": -0.6015182084333377,
+      "spearman": 0.31654624595507835,
+      "pairwise": {
+        "all(|da|>=0.1)": {
+          "n_pairs": 13141,
+          "accuracy": 0.653603226542881
+        },
+        "paper_small(0.1-0.5)": {
+          "n_pairs": 12625,
+          "accuracy": 0.6502178217821782
+        },
+        "paper_medium(0.5-1.0)": {
+          "n_pairs": 516,
+          "accuracy": 0.7364341085271318
+        },
+        "paper_large(>1.0)": {
+          "n_pairs": 0,
+          "accuracy": null
+        },
+        "ours_tercile_1(<0.10)": {
+          "n_pairs": 6648,
+          "accuracy": 0.5251203369434416
+        },
+        "ours_tercile_2(0.10-0.22)": {
+          "n_pairs": 6647,
+          "accuracy": 0.5891379569730706
+        },
+        "ours_tercile_3(>0.22)": {
+          "n_pairs": 6648,
+          "accuracy": 0.7155535499398316
+        }
+      }
+    },
+    "chance": {
+      "pairwise_accuracy": 0.5
+    }
+  }
+}

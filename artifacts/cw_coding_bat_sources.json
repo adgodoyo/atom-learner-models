@@ -1,0 +1,281 @@
+{
+ "sortaSum": {
+  "source_url": "https://codingbat.com/prob/p183071",
+  "statement_sha256": "fc09956dfa2b0b8cd3ca465a7473b8ce2946cf4ca62d2cb9cc84a870b37edd89",
+  "delete_spans": []
+ },
+ "in1To10": {
+  "source_url": "https://codingbat.com/prob/p137365",
+  "statement_sha256": "d172d2fc02cee88bd96886cb9a15b25e80c5cf59ccef96663b96a00365f77f44",
+  "delete_spans": []
+ },
+ "answerCell": {
+  "source_url": "https://codingbat.com/prob/p110973",
+  "statement_sha256": "4dba2783f7f97594f3de6a462413840eb8a95b062e49cb531ce7631facba4ed7",
+  "delete_spans": []
+ },
+ "squirrelPlay": {
+  "source_url": "https://codingbat.com/prob/p141061",
+  "statement_sha256": "0fea27a674722b42d227c15fce1b8daaaa858e78a553ef0e36147bcd1c8df781",
+  "delete_spans": []
+ },
+ "caughtSpeeding": {
+  "source_url": "https://codingbat.com/prob/p157733",
+  "statement_sha256": "71dfcdb2d8969553b8c1ddbfb5d2412998d45b734363b53a1f558a0bc4742b3f",
+  "delete_spans": []
+ },
+ "redTicket": {
+  "source_url": "https://codingbat.com/prob/p170833",
+  "statement_sha256": "5f692a9b925de07e93a2513a7417cb1f34370e475a21e98d9bc191de7d8850b2",
+  "delete_spans": []
+ },
+ "loneSum": {
+  "source_url": "https://codingbat.com/prob/p148972",
+  "statement_sha256": "a936dea07a94efdb5be408f2617ca53970770b87ff4e448c2e480fedf20ec6ad",
+  "delete_spans": []
+ },
+ "luckySum": {
+  "source_url": "https://codingbat.com/prob/p130788",
+  "statement_sha256": "6c6b0406746250b199644e456b63f59bd5f678604cbc39534eede0f95f3bea11",
+  "delete_spans": []
+ },
+ "noTeenSum": {
+  "source_url": "https://codingbat.com/prob/p182879",
+  "statement_sha256": "9576c1d2c09aba099d88b0d000bd3c61273863766415e6afe726c635abe06659",
+  "delete_spans": []
+ },
+ "blackjack": {
+  "source_url": "https://codingbat.com/prob/p117019",
+  "statement_sha256": "97290c6c97347a86b663628aab05225c9696b41b7d18927a149c6fa21f147801",
+  "delete_spans": []
+ },
+ "evenlySpaced": {
+  "source_url": "https://codingbat.com/prob/p198700",
+  "statement_sha256": "e8bbd230ddfbbbb595e81f3874587b97341fd862e863e0c862115b140f0746e3",
+  "delete_spans": []
+ },
+ "zipZap": {
+  "source_url": "https://codingbat.com/prob/p180759",
+  "statement_sha256": "a4bdc5b3c4ac8d61df3d57061700fb2c27230619d14edaba00c51233ab15747e",
+  "delete_spans": []
+ },
+ "endOther": {
+  "source_url": "https://codingbat.com/prob/p126880",
+  "statement_sha256": "93aba4a4236e01454d7d8cbd5e9b8f0619407c8b513c478fab9d6d81b34257f8",
+  "delete_spans": []
+ },
+ "xyBalance": {
+  "source_url": "https://codingbat.com/prob/p134250",
+  "statement_sha256": "eb4dbd783f64a0551681ee228c86f208282e8c2ec1e038d498b217bba606c9e6",
+  "delete_spans": []
+ },
+ "getSandwich": {
+  "source_url": "https://codingbat.com/prob/p129952",
+  "statement_sha256": "82d14058b50c381365ec383cff624c86c651ef55503b91113fefdc1dc1ec9f76",
+  "delete_spans": []
+ },
+ "isEverywhere": {
+  "source_url": "https://codingbat.com/prob/p110222",
+  "statement_sha256": "c20b5163d2af029c8cfb42d5d50566dcb402de89f308b65e5978b5621356c006",
+  "delete_spans": []
+ },
+ "canBalance": {
+  "source_url": "https://codingbat.com/prob/p158767",
+  "statement_sha256": "2ad5cbd33051485d09cb87b28d4d252516a79c4f693d2d2a19805f2bd5106e9f",
+  "delete_spans": []
+ },
+ "atFirst": {
+  "source_url": "https://codingbat.com/prob/p139076",
+  "statement_sha256": "a4ce76189236732199f7c13a7e1abff4c7fa5961b4c82568d1464c43a0513a0c",
+  "delete_spans": []
+ },
+ "repeatEnd": {
+  "source_url": "https://codingbat.com/prob/p152339",
+  "statement_sha256": "b4b9fe93202bf0db649878271e94a36355cb4e722bd4d772a938efda440defae",
+  "delete_spans": []
+ },
+ "plusOut": {
+  "source_url": "https://codingbat.com/prob/p170829",
+  "statement_sha256": "15c996724b5ec74b4a14cdb9f32a83e5ed365550cc986985abc9724be3608f1d",
+  "delete_spans": []
+ },
+ "mixString": {
+  "source_url": "https://codingbat.com/prob/p125185",
+  "statement_sha256": "897cf6cbf0a54be4f8c6cbbe3fdddef785c03e72abeb58c113879da2abd34db6",
+  "delete_spans": [
+   [
+    26,
+    27
+   ]
+  ]
+ },
+ "countCode": {
+  "source_url": "https://codingbat.com/prob/p123614",
+  "statement_sha256": "7d51f3078941ab6ad5e8339bfaebee165be0a21824f6cf5de5d88106edd9a6e7",
+  "delete_spans": []
+ },
+ "xyzThere": {
+  "source_url": "https://codingbat.com/prob/p136594",
+  "statement_sha256": "b3c424c2bbb010c35e8bef020bb7fe5ea78a0819697a2b65cdd5add891447326",
+  "delete_spans": []
+ },
+ "sum3": {
+  "source_url": "https://codingbat.com/prob/p175763",
+  "statement_sha256": "47f78c3d6a6a83f5d39c0075e7c82b0e939159986dc37ce3d79024a049512eaa",
+  "delete_spans": []
+ },
+ "frontPiece": {
+  "source_url": "https://codingbat.com/prob/p142455",
+  "statement_sha256": "92add65c74d8d199354f12a0081c07a2fa28685c2c3db0386f29648752e9eff3",
+  "delete_spans": []
+ },
+ "countEvens": {
+  "source_url": "https://codingbat.com/prob/p162010",
+  "statement_sha256": "6c6d36fe390a4b9b6f391892693faaa8928666e760702ddff46f8d33ad17a925",
+  "delete_spans": []
+ },
+ "sum67": {
+  "source_url": "https://codingbat.com/prob/p111327",
+  "statement_sha256": "80d5b5ec2285df486ea5335cea36f5d28c30cc5f6e6a26eb26618ca4c664a9bb",
+  "delete_spans": []
+ },
+ "withoutTen": {
+  "source_url": "https://codingbat.com/prob/p196976",
+  "statement_sha256": "6e235d79719ad67cec24fdf9efe5ce5a7b6acb14ea14992bb16927e7fe753599",
+  "delete_spans": []
+ },
+ "sum13": {
+  "source_url": "https://codingbat.com/prob/p127384",
+  "statement_sha256": "9b798cc606b05645194dcbe221f2d71f0afbb2005920587e8660be7c1cdd60b7",
+  "delete_spans": []
+ },
+ "tenRun": {
+  "source_url": "https://codingbat.com/prob/p199484",
+  "statement_sha256": "843709558cbed88464b1bac7e37a3a64a1654ddf96ff65c0c120bc4d42b0ff75",
+  "delete_spans": [
+   [
+    148,
+    204
+   ]
+  ]
+ },
+ "centeredAverage": {
+  "source_url": "https://codingbat.com/prob/p136585",
+  "statement_sha256": "767f63c91c28d1f64fe42bf996fc0bffc82118cd40c8b6c5ae7bd4a20b9d2173",
+  "delete_spans": []
+ },
+ "fizzArray": {
+  "source_url": "https://codingbat.com/prob/p180920",
+  "statement_sha256": "8db6bf7627325066cdcc0542c440fa037df35970fc2c7464a9fd339a7dc35062",
+  "delete_spans": [
+   [
+    375,
+    402
+   ]
+  ]
+ },
+ "fizzBuzz": {
+  "source_url": "https://codingbat.com/prob/p153059",
+  "statement_sha256": "3277187dbf72c67e4fad4df35315fa96d95c662342d9d47d0bd963b6b8e88999",
+  "delete_spans": [
+   [
+    0,
+    163
+   ],
+   [
+    252,
+    253
+   ]
+  ]
+ },
+ "has77": {
+  "source_url": "https://codingbat.com/prob/p168357",
+  "statement_sha256": "106e21248dccadf60b9fdaf843474084d9514b9da57666d0901f885bd6af9aa1",
+  "delete_spans": []
+ },
+ "twoTwo": {
+  "source_url": "https://codingbat.com/prob/p102145",
+  "statement_sha256": "915a458cd923711f4593ad65dec9710076b54742ab1e57d9e2bff755884087bb",
+  "delete_spans": []
+ },
+ "roundSum": {
+  "source_url": "https://codingbat.com/prob/p186753",
+  "statement_sha256": "c57402a6d073a41d4fda53aff09b296065cce5f49d6bdab4308de06bab3201e8",
+  "delete_spans": []
+ },
+ "makeChocolate": {
+  "source_url": "https://codingbat.com/prob/p191363",
+  "statement_sha256": "df25852293416b4a1bc2fa7c43cc40c357b4995fda78bacd82d5f4cf7c3e79ec",
+  "delete_spans": []
+ },
+ "without2": {
+  "source_url": "https://codingbat.com/prob/p142247",
+  "statement_sha256": "933080e35d638b428c1362697ce918c5a6a95b771fa5bff45a9e4c90e549addb",
+  "delete_spans": []
+ },
+ "zeroMax": {
+  "source_url": "https://codingbat.com/prob/p187050",
+  "statement_sha256": "9bca433a84fa3e9c3244883c7394952d6f3b8b85f6b60370438f2b1e2185b68b",
+  "delete_spans": []
+ },
+ "sameEnds": {
+  "source_url": "https://codingbat.com/prob/p134300",
+  "statement_sha256": "bd4174b33a63ecef444f14f908beaafff84e5312ae8bddfbfc0cfb94ebd97089",
+  "delete_spans": []
+ },
+ "countClumps": {
+  "source_url": "https://codingbat.com/prob/p193817",
+  "statement_sha256": "198b01d13af1f8ecd8e47c2bf93efec86cdec5b842c5abdd94ad8334a3067491",
+  "delete_spans": []
+ },
+ "fix45": {
+  "source_url": "https://codingbat.com/prob/p125819",
+  "statement_sha256": "8b1a01d662523482bb5246db79bf0aaa102e631c2cb668191a83042cf171a6fa",
+  "delete_spans": [
+   [
+    0,
+    58
+   ]
+  ]
+ },
+ "seriesUp": {
+  "source_url": "https://codingbat.com/prob/p104090",
+  "statement_sha256": "b0944d8fde3496d17da84b3720f7516b56ff54c43a41373d286e5a5dfde24e62",
+  "delete_spans": []
+ },
+ "shiftLeft": {
+  "source_url": "https://codingbat.com/prob/p105031",
+  "statement_sha256": "e3562b8e348e11c8d36b3f0ebe31cadbf3ad7488284d6dedb77de7fcfdaa1958",
+  "delete_spans": []
+ },
+ "bobThere": {
+  "source_url": "https://codingbat.com/prob/p175762",
+  "statement_sha256": "1dbf4382ef4be722e4aaa83d2eaa93fac2e1e243659cc1dc039e3d04e3d5ed94",
+  "delete_spans": []
+ },
+ "alarmClock": {
+  "source_url": "https://codingbat.com/prob/p160543",
+  "statement_sha256": "25ca868893559e9c261b95e52b3fd95a25dc08632e5005d529ab4101c8ccf1ea",
+  "delete_spans": []
+ },
+ "love6": {
+  "source_url": "https://codingbat.com/prob/p137742",
+  "statement_sha256": "2728b69f5a67a98eec469386d899320e3b30b9917839f3fd70f24271ddf35061",
+  "delete_spans": []
+ },
+ "cigarParty": {
+  "source_url": "https://codingbat.com/prob/p159531",
+  "statement_sha256": "1a966636f8200d02d0a973e1ab192eb9468af6c807c770874e2ecc431eae0fea",
+  "delete_spans": []
+ },
+ "dateFashion": {
+  "source_url": "https://codingbat.com/prob/p103360",
+  "statement_sha256": "e6483195aeda028b482b55b0ac6ba56f0b145fb83a450c96cd10547eb32dee15",
+  "delete_spans": []
+ },
+ "greenTicket": {
+  "source_url": "https://codingbat.com/prob/p120633",
+  "statement_sha256": "611a09f0921cf26ba4472a5180f19f78934b33b91b2120bfbd28c45ad1f60572",
+  "delete_spans": []
+ }
+}

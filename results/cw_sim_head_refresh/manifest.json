@@ -1,0 +1,21 @@
+{
+  "checkpoint": "results/cw_sim_head_refresh/final.pt",
+  "sha256": "e32b85e69722e56bf53f88ec0acb4ca214f0e259321323659de94368505f0022",
+  "ratchet_cwsim_checkpoint_sha256": "4e460240b34f53847d571b3ff88d7412416d607fb46e2b99ced9cdb6098e01f1",
+  "recipe": {
+    "epochs": 60,
+    "lr": 0.001,
+    "seed": 0,
+    "learner_batch_size": 32,
+    "likelihood": "kmixture",
+    "k_train": 8,
+    "free_bits": 0.05,
+    "outcome_loss_weight": 1.0,
+    "optimizer": "Adam",
+    "filter_frozen": true
+  },
+  "loss_first_epoch_mean": 1.1601909669962795,
+  "loss_last_epoch_mean": 0.8655439127575267,
+  "canary_6": "PASS -- attempt_encoder + filt byte-identical before/after",
+  "elapsed_s": 137.43934202194214
+}

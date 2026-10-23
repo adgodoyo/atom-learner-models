@@ -1,0 +1,12 @@
+{
+  "n_rows": 5452,
+  "n_val_learners": 110,
+  "release_composition": {
+    "F19": 3034,
+    "S19": 2418
+  },
+  "checkpoint": "results/cw_sigma_precision_0305a22/aws/results/final.pt",
+  "checkpoint_sha256": "860a79d5c4b3080d614a3eeca60dfdde71f3c24230f2f88f2fcfb615a28b6b0e",
+  "file_sha256": "4375b0c93d7610fef94dc21d2db657a95aaeb5dc663d102f30fa5e7030a4ecde",
+  "mu_dim": 32
+}

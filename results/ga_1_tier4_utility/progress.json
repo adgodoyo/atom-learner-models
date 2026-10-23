@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-09-03T21:20:35Z",
+  "stage": "train_seed20260904",
+  "done": 12,
+  "total": 60,
+  "elapsed_s": 242.74282217025757,
+  "stage_elapsed_s": 7.5800299644470215,
+  "projected_stage_s": 37.90014982223511,
+  "fuse_minutes": 60,
+  "loss_mean": 0.7684931251737807,
+  "internal_rank_acc": 0.5511712282675648
+}

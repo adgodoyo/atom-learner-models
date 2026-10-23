@@ -1,0 +1,35 @@
+{
+  "generations_jsonl": "instance-local; mandatory Mac pull before terminate; never S3",
+  "geometry_sha256": "c0516e381c2174b9bfb08617d8471fd411ef179f96be783239d8a7843d1fd440",
+  "numeric_sha256": "a695dbf8a09ed37d3c42e08e440121c73cda596ed01943d43293f3604ad02ed5",
+  "rl2": {
+    "ratchet-cwsim/cold-head": {
+      "actor_sha256": {
+        "20260901": "1d610f1fd1e67bce203d9211df5014bc485a14bb430dc323af45d20227c5bc66",
+        "20260902": "8d2b45371b55d89bd25809efb6d228b96d073076cfc4ba21eea1218c81af1733",
+        "20260903": "1add8346451b5940decfb4dd650f5b190995ab5a47e8760e3a0225d4bf330077"
+      },
+      "summary_path": "results/rl_2/ratchet-cwsim_cold-head/summary.json",
+      "summary_sha256": "e9eaab6d29fdfd1acc97c27d30de080ebc419a65f77262d3062063e0c3139ca9"
+    },
+    "ratchet-cwsim/refreshed-head": {
+      "actor_sha256": {
+        "20260901": "ce788f265c0165a15d5b220f7c5b26a52d5a7b19f77a863e8ae9d2cf44af762b",
+        "20260902": "688b8904a51cdd2d52abef2d53311a75770952ae6cb30f4a10f6ada8923adc3c",
+        "20260903": "3b4c5509b5898584e0719410a1bb28a5d36588f6c1c74c70e48085e227708246"
+      },
+      "summary_path": "results/rl_2/ratchet-cwsim_refreshed-head/summary.json",
+      "summary_sha256": "7c02fa4c77bdaba81f280bef3a8898f1f8dd839a3cfde094c426dff374357a64"
+    },
+    "ratchet-original": {
+      "actor_sha256": {
+        "20260901": "36787447ade4f10759fe78616336333f6d3ac9a18d0a674ef00e05d836b331a4",
+        "20260902": "6b9daf200cb3bd70647827911bd677f49909d2202c12a4956d2124f38c6a194c",
+        "20260903": "441d7cdca492673ad5ebcaef5a007d64be5a55b5730da26977d459ed5ce2907d"
+      },
+      "summary_path": "results/rl_2/ratchet-original/summary.json",
+      "summary_sha256": "0aa4fc87d3df5d3cedd0e63e06c2b4a66a3d0221f94e638e24fc5a86bda7a6ba"
+    }
+  },
+  "status": "complete"
+}

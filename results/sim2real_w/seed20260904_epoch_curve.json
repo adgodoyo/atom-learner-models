@@ -1,0 +1,85 @@
+{
+  "seed": 20260904,
+  "epochs_run": 8,
+  "selected_epoch": 3,
+  "selected_validation_score": 0.4768851340212985,
+  "stopping_reason": "validation_patience",
+  "epoch_curve": [
+    {
+      "epoch": 1,
+      "score": 0.5391955195562323,
+      "improvement": null,
+      "improved": true,
+      "stale_epochs": 0,
+      "source": "simulated_validation",
+      "seed": 20260904
+    },
+    {
+      "epoch": 2,
+      "score": 0.5120689609749403,
+      "improvement": 0.027126558581292093,
+      "improved": true,
+      "stale_epochs": 0,
+      "source": "simulated_validation",
+      "seed": 20260904
+    },
+    {
+      "epoch": 3,
+      "score": 0.4768851340212985,
+      "improvement": 0.03518382695364175,
+      "improved": true,
+      "stale_epochs": 0,
+      "source": "simulated_validation",
+      "seed": 20260904
+    },
+    {
+      "epoch": 4,
+      "score": 0.5275961607675914,
+      "improvement": -0.05071102674629291,
+      "improved": false,
+      "stale_epochs": 1,
+      "source": "simulated_validation",
+      "seed": 20260904
+    },
+    {
+      "epoch": 5,
+      "score": 0.506956918177361,
+      "improvement": -0.030071784156062487,
+      "improved": false,
+      "stale_epochs": 2,
+      "source": "simulated_validation",
+      "seed": 20260904
+    },
+    {
+      "epoch": 6,
+      "score": 0.5325937605266601,
+      "improvement": -0.05570862650536157,
+      "improved": false,
+      "stale_epochs": 3,
+      "source": "simulated_validation",
+      "seed": 20260904
+    },
+    {
+      "epoch": 7,
+      "score": 0.5027448321541722,
+      "improvement": -0.0258596981328737,
+      "improved": false,
+      "stale_epochs": 4,
+      "source": "simulated_validation",
+      "seed": 20260904
+    },
+    {
+      "epoch": 8,
+      "score": 0.5095456821362385,
+      "improvement": -0.03266054811494001,
+      "improved": false,
+      "stale_epochs": 5,
+      "source": "simulated_validation",
+      "seed": 20260904
+    }
+  ],
+  "training_source": "simulator",
+  "selection_source": "simulated_validation",
+  "real_rows_in_training": 0,
+  "real_rows_in_selection": 0
+}

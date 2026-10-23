@@ -1,0 +1,20 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: uv sync --locked --extra dev --extra baselines
+      - name: Small checkpoints rebuild to their published hashes
+        run: uv run python scripts/materialize_checkpoints.py --skip-hub
+      - name: Unit tests (no corpora, no backbone, no weights from the Hub)
+        env:
+          HF_HUB_OFFLINE: "1"
+        run: uv run pytest
+      - name: Smoke pipeline
+        run: uv run python scripts/p0_03_smoke.py

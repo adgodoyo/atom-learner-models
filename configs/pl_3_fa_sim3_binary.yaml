@@ -1,0 +1,29 @@
+# EPIG planner replay on FA-SIM3's own frozen belief, with binary (correctness-only)
+# targets. Frozen before the measurement; geometry and arms match pl_3_evsi_proper.yaml.
+task: pl_3_fa_sim3_binary
+seed: 0
+source:
+  manifest: artifacts/fa_manifest_v2.parquet
+  learner_split: splits/fa_learner_split_v2.csv
+  item_split: splits/fa_item_split_v2.csv
+  codec: artifacts/fa_item_codec_dim64.npz
+  checkpoint: artifacts/checkpoints/fa_sim3_final.pt
+  split: val
+geometry:
+  pool_lookback: 150
+  candidate_w: 50
+  n_target: 15
+  min_length: 165
+  n_codec_clusters: 8
+  budget: 5
+  k: 64
+arms:
+  policies: [greedy_evsi, random, max_entropy, max_epistemic]
+  v_flavors: [jensen, total]
+headroom:
+  fraction: 0.25
+  ci_alpha: 0.05
+  bootstrap_n: 5000
+run:
+  max_learners: 0
+  sync_every: 10

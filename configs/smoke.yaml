@@ -1,0 +1,17 @@
+# Synthetic-data smoke config for the end-to-end pipeline (`make smoke`). All numeric
+# settings live here, not in code.
+n_learners: 20
+n_items: 50
+seq_len: 60
+codec_dim: 16
+hidden: 32
+epochs: 40
+lr: 0.01
+train_frac: 0.7
+ability_sd: 1.0
+difficulty_sd: 1.0
+seed: 0
+
+# Gate thresholds
+max_wall_s: 300.0   # < 5 minutes
+min_val_auc: 0.55   # the miniature must learn something from history

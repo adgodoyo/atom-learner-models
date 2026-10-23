@@ -1,0 +1,124 @@
+# Dataset locations and ingest gate targets (all numeric settings live here, not in code).
+# Paths are resolved relative to the repo root unless absolute; override FA with $ATOM_FA_DIR.
+
+fa:
+  dir: ../Datasets/FoundationalAssist
+  # Raw-ingest gate: the published FoundationalASSIST statistics.
+  gate:
+    interactions: 1753384        # len(Interactions.csv)
+    users: 5000                  # nunique(user_id)
+    problems: 3395               # ROW count of Problems.csv (3368 unique ids + 27 dup rows)
+    correct_rate: 0.613          # mean(discrete_score == 1 over all rows); NaN scores -> 0
+    correct_rate_tol: 0.001      # 61.3% +/- 0.1 percentage point
+  # Corroborating stats (not gated, reported): hint_rate ~0.052, saw_answer_rate ~0.217,
+  # skills 224, problems-per-user in [215, 421].
+
+  # Learner-level chronological split (held-out learners).
+  split:
+    fracs: [0.8, 0.1, 0.1]              # train / val / test over the 5,000 learners
+    seed: 0
+    manifest: splits/fa_learner_split.csv   # committed, frozen; reused by every later stage
+
+  # Canonical v2 manifest rebuild. Gate targets: exact-ID deduplication drops 31,441 rows in
+  # 15,677 duplicate groups, and 8,952 rows have a missing score; both counts were reproduced
+  # independently.
+  manifest_v2:
+    old_learner_split: splits/fa_learner_split.csv   # the v1 split: reused for val/test identity
+    lockbox_frac: 0.125       # of the OLD split's 4,000 train learners -> 500 lockbox learners
+    item_heldout_frac: 0.15   # of problem_group_id's -> never used for parameter training
+    split_seed: 1             # distinct from the v1 split's seed 0 -- a different draw, not a reuse
+    gate:
+      n_raw: 1753384
+      n_dedup_dropped: 31441
+      n_dedup_groups: 15677
+      n_score_missing: 8952
+    manifest_out: artifacts/fa_manifest_v2.parquet   # gitignored; regenerate via the script
+    learner_split_out: splits/fa_learner_split_v2.csv
+    item_split_out: splits/fa_item_split_v2.csv
+    problem_catalog_out: splits/fa_problem_groups_v2.csv
+    lockbox_manifest_out: splits/fa_lockbox_manifest_v2.json
+
+cw:
+  dir: ../Datasets/tiktoc-main/data
+  # TIKTOC ingest gate, cross-checked against the TIKTOC paper (arXiv:2410.10829, Table 2):
+  # 246 unique students, 17 problems with complete test cases. The paper's "3,714 code
+  # submissions" are (student, problem) ATTEMPT PAIRS, not total submission rows
+  # (avg/problem 218.5, avg/student 15.1 both match Table 2 exactly under that reading);
+  # measured here at 3,712 pairs, a difference of 2 that is reported rather than resolved.
+  # `dataset_granular_all` (the file this ingest uses) is the attempt-level file: 13,083
+  # total submissions across those pairs, the TIKTOC authors' own file for attempt-level KT.
+  gate:
+    variant: all
+    students: 246
+    problems: 17
+    student_problem_pairs: 3714
+    student_problem_pairs_tol: 5   # measured 3712 vs paper's 3714
+  n_hand_verified_trajectories: 10
+  trajectory_seed: 0
+
+# Full CodeWorkout ProgSnap2 event-graph ingest, S19 + F19 full releases (distinct from `cw:`
+# above, which is the TIKTOC 17-problem granular subset). Gate targets were measured directly
+# and match an independent tabulation exactly on every field (including episode counts of
+# 18,143 / 27,814 under the preliminary problem-boundary grouping).
+cw_events:
+  dir: ../Datasets/CodeWorkout_CMU
+  n_hand_read_episodes: 10
+  hand_read_seed: 0
+  gate:
+    S19:
+      raw_rows: 201570
+      attempts: 69627
+      compiles: 69627
+      compile_errors: 62316
+      learners: 413
+      problems: 50
+    F19:
+      raw_rows: 360176
+      attempts: 125578
+      compiles: 125578
+      compile_errors: 109020
+      learners: 506
+      problems: 50
+
+# CodeWorkout sessionisation, episode targets and splits. tau_session is fixed in advance from
+# the S19-TRAIN same-problem gap distribution ONLY (never a validation metric). No stable
+# between-session valley was found (the log-density decays close to monotonically out past
+# 6,000 minutes; local upward ticks are noise on a long tail, not a sustained second mode),
+# so the domain-standard default is adopted, bracketed by the sensitivity values below.
+# See reports/cw_2_sessions.md for the full gap-distribution table.
+cw_sessions:
+  tau_session_minutes: 60
+  tau_sensitivity_minutes: [30, 60, 120]
+  learner_split:
+    fracs: [0.8, 0.2, 0.0]   # S19 train / val; test=0 (F19 is the sealed external test)
+    seed: 0
+    manifest: splits/cw_s19_learner_split.csv
+  item_split:
+    heldout_frac: 0.15   # mirrors the FA manifest_v2 item_heldout_frac for consistency
+    seed: 0
+    manifest: splits/cw_item_split.csv
+    # LIMITATION: the item split is per problem ID, not per group of near-duplicate problem
+    # texts, because no problem-statement text ships with the raw S19/F19 ProgSnap2 releases
+    # (checked: MainTable.csv, DatasetMetadata.csv, Subject.csv; only the TIKTOC 17-problem
+    # subset carries prompt text).
+
+xes:
+  dir: ../Datasets/XES3G5M
+  # XES3G5M ingest gate, cross-checked against the XES3G5M NeurIPS 2023 D&B paper and README.
+  # The archive ships pyKT's own KT-format release, not the raw log: question count comes
+  # straight from metadata/questions.json (7,652 keys, EXACT); user count comes from
+  # nunique(uid) across question_level's train_valid (folds 0-4) + test (fold -1) files
+  # (14,453 + 3,613 = 18,066, EXACT, zero overlap between the two files); interaction count
+  # reconstructs to 5,549,184 by exploding those same two files to one row per interaction
+  # and dropping padded positions (selectmasks == -1, which only ever occur in the last chunk
+  # of each student's train_valid sequence -- confirmed structurally). The dataset's own
+  # README ("Clarification" section) states that reconstructing the exact original
+  # interaction count from these processed files is difficult (no unique interaction ids,
+  # both granularities truncated/extended) -- measured here at 5,549,184 vs the published
+  # 5,549,635, a delta of 451 (~0.008%) that is reported rather than resolved.
+  # See reports/p1_04_xes_ingest.md.
+  gate:
+    questions: 7652          # nunique(question_id) in metadata/questions.json
+    users: 18066              # nunique(uid), question_level train_valid + test, EXACT
+    interactions: 5549635     # published (paper/README); measured 5,549,184
+    interactions_tol: 500     # covers the reported 451 delta, not further

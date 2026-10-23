@@ -1,0 +1,64 @@
+{
+  "status": "complete",
+  "metric_direction": "lower_is_better",
+  "bar": "sim_actor beats random and every blind heuristic on real held-out replay",
+  "bar_pass": false,
+  "policies": {
+    "sim_actor": [
+      0.16916263877056661,
+      0.11003309388746706,
+      0.2390150471749141
+    ],
+    "random": [
+      0.14970846458554402,
+      0.10142536087678096,
+      0.20505494470976177
+    ],
+    "greedy_epig": [
+      0.19013906009112405,
+      0.12491176993105788,
+      0.2638677893314193
+    ],
+    "max_entropy": [
+      0.1579508638186943,
+      0.12124094490352165,
+      0.19890579771614567
+    ],
+    "difficulty_matched": [
+      0.26780439401663964,
+      0.2023758905181966,
+      0.34217066465801116
+    ],
+    "replay_actor_reference": null
+  },
+  "comparisons": {
+    "difficulty_matched": {
+      "beats": false,
+      "actor_minus_comparator": -0.09864175524607302
+    },
+    "greedy_epig": {
+      "beats": false,
+      "actor_minus_comparator": -0.020976421320557437
+    },
+    "max_entropy": {
+      "beats": false,
+      "actor_minus_comparator": 0.011211774951872311
+    },
+    "random": {
+      "beats": false,
+      "actor_minus_comparator": 0.0194541741850226
+    }
+  },
+  "real_rows_in_training": 0,
+  "real_rows_in_selection": 0,
+  "exam_source": "real_heldout_replay",
+  "disclosures": [
+    "Outcome-faithful/style-generic environment (probe 0.62\u20130.65, panel C \u0394\u22480.0005).",
+    "Stationarity within the diagnostic session is assumed: b_full defines the student-as-of-now, and imagined answers are drawn from that student \u2014 'what would they do if asked today' \u2014 not from their historical selves. The measured size of the historical-drift caveat is V3's 0.7225, disclosed beside every curve; within-session learning from the asked questions themselves is the action-effect channel, explicitly outside this claim's scope.",
+    "b_full plays the part the real student plays at deployment \u2014 it generates answers and defines success; it is never an input to the deployed policy."
+  ],
+  "start": 10,
+  "budget": 10,
+  "n_learners": 102,
+  "primary": "sim_actor_vs_random"
+}

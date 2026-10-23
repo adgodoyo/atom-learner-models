@@ -1,0 +1,403 @@
+{
+  "status": "complete",
+  "manifest": {
+    "lane": "T4",
+    "rung": "B",
+    "stage": "panel",
+    "substrate": "ratchet-cwsim/refreshed-head",
+    "model": "google/gemma-4-E4B",
+    "checkpoint_revision": "411aa17b749aa952df1359d2dcea73917a544d9a",
+    "decode": {
+      "do_sample": true,
+      "temperature": 0.8,
+      "top_p": 1.0,
+      "max_new_tokens": 128,
+      "min_new_tokens": 8,
+      "note": "greedy is tier 2's measured degenerate case and is never used"
+    },
+    "arms": [
+      "zero_shot|history",
+      "zero_shot|no_history",
+      "zero_shot|swapped_history",
+      "tuned|history",
+      "tuned|no_history",
+      "tuned|swapped_history"
+    ],
+    "n_states": 320,
+    "n_generations": 1920,
+    "seeds": [
+      20260902
+    ],
+    "starts": [
+      3,
+      5,
+      10
+    ],
+    "canaries": {
+      "menu_budget_leak": "pass",
+      "no_history_prompt_identical": "pass",
+      "empty_generation": "pass",
+      "codec_evaluated_with_adapter_off": true
+    },
+    "n_training_runs": 1,
+    "disclosures": [
+      "single training run \u2014 no seed-level clustering is possible and none is claimed",
+      "MOVEMENT claim about the generative distribution, never a question-quality claim and never 'novel questions help students'.",
+      "On a 50-question corpus partial memorisation is EXPECTED; the memorisation panel reports it rather than hiding it.",
+      "Manifold support 0.90 is a reference line, not a gate; a failure is a result.",
+      "The instruments are the mind-model's own codec/EPIG, by design; this is not an independent judgement of question quality.",
+      "Tuned no-history rows are OUT OF THE TRAINING DISTRIBUTION: under the warm draw (\u00a74.8) the tuned model never saw an empty history. Reference line only.",
+      "Rung A's \u00db instrument validation used the OLD COLD DRAW (start 0, 11.1% cold rows). It stands as registered because it is an instrument-validation claim and not a personalisation claim -- but the draws did not match, and this says so.",
+      "PRIMARY pointing is the realised-r percentile of the projected menu item. EPIG percentile is SECONDARY: rung A measured Spearman(EPIG, true r) within a state at only 0.07-0.10, so an EPIG-percentile null is NOT evidence that the signal failed to shape generation -- the training signal is r, and the panel scores against it.",
+      "The no-history arm is 110 generations per model (one per learner, reused across that learner's starts). The no-history prompt is a single identical string, so the former 440 rows were resamples of it; pairing was by index under matched batch seeds and never true CRN, and the bootstrap is learner-clustered, so no statistic changes meaning.",
+      "History-sensitivity's HEADLINE is the swapped-history contrast, not history-vs-no-history: every history block prints the completed exercise's own statement and CW's assignment order is fixed, so a with/without gap is substantially curriculum position rather than the person."
+    ],
+    "elapsed_s": 4771.031194925308
+  },
+  "panel": {
+    "real_reference": {
+      "dist": {
+        "dist_1": 0.286142001710864,
+        "dist_2": 0.6988636363636364
+      },
+      "n_problems": 50
+    },
+    "zero_shot|history": {
+      "n": 320,
+      "manifold_support_at_real_p95": 0.271875,
+      "nearest_distance_mean_ci": [
+        6.183591575548053,
+        6.029752999180928,
+        6.327688805377111
+      ],
+      "dist_1": 0.16796794030263248,
+      "dist_2": 0.4644245036388045,
+      "dist_1_frac_of_real": 0.5870090350187663,
+      "dist_2_frac_of_real": 0.6645423791904845,
+      "unique_normalised_fraction": 0.975,
+      "realised_r_percentile_PRIMARY": [
+        0.46640261632315344,
+        0.4276310127067603,
+        0.5030007966084412
+      ],
+      "projection_miss_rate": 0.33125,
+      "nearest_already_in_history_fraction": 0.209375,
+      "within_start_internal_spread": {
+        "3": 6.821884413147283,
+        "5": 6.964207895992763,
+        "10": 6.517111889253262
+      },
+      "epig_percentile_secondary": [
+        0.2749844841368955,
+        0.24453593952091665,
+        0.3065445642809843
+      ],
+      "max_pool_similarity": [
+        0.15288169792477135,
+        0.13962224457985567,
+        0.16714905883790654
+      ],
+      "exact_pool_match_fraction": 0.0,
+      "internal_mean_pairwise_codec_distance": 6.784038287489038
+    },
+    "zero_shot|no_history": {
+      "n": 320,
+      "manifold_support_at_real_p95": 0.1625,
+      "nearest_distance_mean_ci": [
+        6.504185532778502,
+        6.383803003374488,
+        6.625446741785853
+      ],
+      "dist_1": 0.07489511576112291,
+      "dist_2": 0.19576552377942802,
+      "dist_1_frac_of_real": 0.2617410772040439,
+      "dist_2_frac_of_real": 0.2801197738632466,
+      "unique_normalised_fraction": 0.340625,
+      "realised_r_percentile_PRIMARY": [
+        0.466838897902924,
+        0.42979846319261333,
+        0.5047014822203044
+      ],
+      "projection_miss_rate": 0.328125,
+      "nearest_already_in_history_fraction": 0.153125,
+      "within_start_internal_spread": {
+        "3": 6.623643735056879,
+        "5": 6.623643735056879,
+        "10": 6.571587391539304
+      },
+      "epig_percentile_secondary": [
+        0.3099009329213166,
+        0.27874448980941696,
+        0.3413073303207148
+      ],
+      "max_pool_similarity": [
+        0.12343111583147619,
+        0.11866398702271769,
+        0.12826013271436568
+      ],
+      "exact_pool_match_fraction": 0.0,
+      "internal_mean_pairwise_codec_distance": 6.566439854903924
+    },
+    "zero_shot|swapped_history": {
+      "n": 320,
+      "manifold_support_at_real_p95": 0.265625,
+      "nearest_distance_mean_ci": [
+        6.239091041311622,
+        6.086800938844681,
+        6.390793938338756
+      ],
+      "dist_1": 0.16091192259261713,
+      "dist_2": 0.4707156882659625,
+      "dist_1_frac_of_real": 0.5623498879245722,
+      "dist_2_frac_of_real": 0.6735443994699951,
+      "unique_normalised_fraction": 0.978125,
+      "realised_r_percentile_PRIMARY": [
+        0.42539958879022177,
+        0.38654108736261916,
+        0.4642094474693239
+      ],
+      "projection_miss_rate": 0.33125,
+      "nearest_already_in_history_fraction": 0.16875,
+      "within_start_internal_spread": {
+        "3": 6.447244666809912,
+        "5": 6.667865653255624,
+        "10": 6.903476795426537
+      },
+      "epig_percentile_secondary": [
+        0.27926646283623474,
+        0.25123920529929866,
+        0.30871895756442963
+      ],
+      "max_pool_similarity": [
+        0.16492518342322135,
+        0.1500075577193998,
+        0.18106132105788889
+      ],
+      "exact_pool_match_fraction": 0.0,
+      "internal_mean_pairwise_codec_distance": 6.6788465937772905
+    },
+    "tuned|history": {
+      "n": 320,
+      "manifold_support_at_real_p95": 0.95625,
+      "nearest_distance_mean_ci": [
+        2.7153758187778294,
+        2.5097534421260934,
+        2.917758710394846
+      ],
+      "dist_1": 0.14102388141641503,
+      "dist_2": 0.4160819534100477,
+      "dist_1_frac_of_real": 0.4928457918558719,
+      "dist_2_frac_of_real": 0.595369299188361,
+      "unique_normalised_fraction": 0.740625,
+      "realised_r_percentile_PRIMARY": [
+        0.5079044306670527,
+        0.4739120815220601,
+        0.5427539536067668
+      ],
+      "projection_miss_rate": 0.240625,
+      "nearest_already_in_history_fraction": 0.05,
+      "within_start_internal_spread": {
+        "3": 5.965875170626232,
+        "5": 5.956352152557555,
+        "10": 5.769651656232353
+      },
+      "epig_percentile_secondary": [
+        0.4926101693526867,
+        0.46251553565345777,
+        0.5225886678358618
+      ],
+      "max_pool_similarity": [
+        0.5078316709308778,
+        0.4706906385354149,
+        0.5471755488109147
+      ],
+      "exact_pool_match_fraction": 0.296875,
+      "internal_mean_pairwise_codec_distance": 5.908199951010497
+    },
+    "tuned|no_history": {
+      "n": 320,
+      "manifold_support_at_real_p95": 0.8875,
+      "nearest_distance_mean_ci": [
+        4.402845907118172,
+        4.295703515759669,
+        4.50432107353583
+      ],
+      "dist_1": 0.0860332541567696,
+      "dist_2": 0.22397491558128316,
+      "dist_1_frac_of_real": 0.3006662903117,
+      "dist_2_frac_of_real": 0.320484432051267,
+      "unique_normalised_fraction": 0.340625,
+      "realised_r_percentile_PRIMARY": [
+        0.48876358899568123,
+        0.45409176993093303,
+        0.5245383354914842
+      ],
+      "projection_miss_rate": 0.28125,
+      "nearest_already_in_history_fraction": 0.06875,
+      "within_start_internal_spread": {
+        "3": 6.107341507848031,
+        "5": 6.107341507848031,
+        "10": 6.11241917984299
+      },
+      "epig_percentile_secondary": [
+        0.31493666927327046,
+        0.2828166534737734,
+        0.346382559494284
+      ],
+      "max_pool_similarity": [
+        0.20397013482287135,
+        0.19040442809587513,
+        0.21887185031268475
+      ],
+      "exact_pool_match_fraction": 0.00625,
+      "internal_mean_pairwise_codec_distance": 6.071356716491153
+    },
+    "tuned|swapped_history": {
+      "n": 320,
+      "manifold_support_at_real_p95": 0.959375,
+      "nearest_distance_mean_ci": [
+        2.7231025979854167,
+        2.5209673051629213,
+        2.9316275822871827
+      ],
+      "dist_1": 0.14355914355914356,
+      "dist_2": 0.4138599640933573,
+      "dist_1_frac_of_real": 0.501705945652134,
+      "dist_2_frac_of_real": 0.5921898673205763,
+      "unique_normalised_fraction": 0.746875,
+      "realised_r_percentile_PRIMARY": [
+        0.4805784797620106,
+        0.44353916304786495,
+        0.5183135810768569
+      ],
+      "projection_miss_rate": 0.23125,
+      "nearest_already_in_history_fraction": 0.05625,
+      "within_start_internal_spread": {
+        "3": 6.256498756457726,
+        "5": 6.037265162504588,
+        "10": 5.668159785154327
+      },
+      "epig_percentile_secondary": [
+        0.4669784802792497,
+        0.4367760515184091,
+        0.4976287744584528
+      ],
+      "max_pool_similarity": [
+        0.5159788306429688,
+        0.4772090334614361,
+        0.5540036628248064
+      ],
+      "exact_pool_match_fraction": 0.296875,
+      "internal_mean_pairwise_codec_distance": 6.005152988087801
+    },
+    "zero_shot|history_sensitivity": {
+      "paired_codec_distance_vs_swapped_history": [
+        6.825553303211928,
+        6.631994800530374,
+        7.013747462742031
+      ],
+      "paired_codec_distance_vs_no_history": [
+        6.702246711403132,
+        6.5153387820348145,
+        6.888287950363011
+      ],
+      "headline": "paired_codec_distance_vs_swapped_history",
+      "no_history_internal_spread": 6.566439854903924,
+      "history_internal_spread": 6.784038287489038,
+      "within_start_history_spread": {
+        "3": 6.821884413147283,
+        "5": 6.964207895992763,
+        "10": 6.517111889253262
+      },
+      "within_start_swapped_spread": {
+        "3": 6.447244666809912,
+        "5": 6.667865653255624,
+        "10": 6.903476795426537
+      }
+    },
+    "tuned|history_sensitivity": {
+      "paired_codec_distance_vs_swapped_history": [
+        5.913745883107185,
+        5.743467160481959,
+        6.077536829654127
+      ],
+      "paired_codec_distance_vs_no_history": [
+        6.341470451653004,
+        6.231157938800752,
+        6.448699499387294
+      ],
+      "headline": "paired_codec_distance_vs_swapped_history",
+      "no_history_internal_spread": 6.071356716491153,
+      "history_internal_spread": 5.908199951010497,
+      "within_start_history_spread": {
+        "3": 5.965875170626232,
+        "5": 5.956352152557555,
+        "10": 5.769651656232353
+      },
+      "within_start_swapped_spread": {
+        "3": 6.256498756457726,
+        "5": 6.037265162504588,
+        "10": 5.668159785154327
+      }
+    },
+    "movement|history": {
+      "tuned_minus_zero_shot_realised_r_percentile_PRIMARY": [
+        0.030898519338450756,
+        -0.02725818863986643,
+        0.08824705666255683
+      ],
+      "tuned_minus_zero_shot_epig_percentile_secondary": [
+        0.21762568521579126,
+        0.1719719131404453,
+        0.26274558958907407
+      ],
+      "tuned_minus_zero_shot_nearest_distance": [
+        -3.468215756770223,
+        -3.7071357668342535,
+        -3.238297724552685
+      ]
+    },
+    "movement|no_history": {
+      "tuned_minus_zero_shot_realised_r_percentile_PRIMARY": [
+        0.002256362302473207,
+        -0.05339995626427733,
+        0.061889028218904484
+      ],
+      "tuned_minus_zero_shot_epig_percentile_secondary": [
+        0.005035736351953836,
+        -0.03792135470409804,
+        0.0492089598192428
+      ],
+      "tuned_minus_zero_shot_nearest_distance": [
+        -2.10133962566033,
+        -2.2761130043130833,
+        -1.9380436990223826
+      ]
+    },
+    "movement|swapped_history": {
+      "tuned_minus_zero_shot_realised_r_percentile_PRIMARY": [
+        0.06274007097664555,
+        0.002065016415252262,
+        0.12107321426663306
+      ],
+      "tuned_minus_zero_shot_epig_percentile_secondary": [
+        0.187712017443015,
+        0.14759414152518416,
+        0.227797476515041
+      ],
+      "tuned_minus_zero_shot_nearest_distance": [
+        -3.515988443326205,
+        -3.781949935002485,
+        -3.2456163401796947
+      ]
+    },
+    "movement|personalisation_did_swap": {
+      "tuned_minus_zero_shot_own_vs_swapped_history_distance": [
+        -0.911807420104742,
+        -1.1735483801178634,
+        -0.641822259798646
+      ],
+      "reading": "positive = training widened the separation between this learner's own history and another learner's at the same start"
+    }
+  }
+}

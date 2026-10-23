@@ -1,0 +1,59 @@
+{
+ "n": 4914,
+ "nboot": 1000,
+ "seed": 20260824,
+ "contrasts": {
+  "ATOM  -  AKT": {
+   "d_auc": -0.0237,
+   "d_auc_ci95": [
+    -0.0324,
+    -0.0149
+   ],
+   "d_acc": -0.0167,
+   "d_acc_ci95": [
+    -0.0273,
+    -0.0062
+   ],
+   "auc_verdict": "CI-clear"
+  },
+  "ATOM  -  IRT (causal)": {
+   "d_auc": 0.0045,
+   "d_auc_ci95": [
+    -0.0072,
+    0.0154
+   ],
+   "d_acc": 0.0055,
+   "d_acc_ci95": [
+    -0.008,
+    0.0174
+   ],
+   "auc_verdict": "not CI-clear"
+  },
+  "AKT   -  IRT (causal)": {
+   "d_auc": 0.0282,
+   "d_auc_ci95": [
+    0.0193,
+    0.0372
+   ],
+   "d_acc": 0.0222,
+   "d_acc_ci95": [
+    0.0113,
+    0.0332
+   ],
+   "auc_verdict": "CI-clear"
+  },
+  "ATOM  -  ATOM shuffled-u": {
+   "d_auc": 0.1989,
+   "d_auc_ci95": [
+    0.1775,
+    0.2177
+   ],
+   "d_acc": 0.1418,
+   "d_acc_ci95": [
+    0.1229,
+    0.1595
+   ],
+   "auc_verdict": "CI-clear"
+  }
+ }
+}

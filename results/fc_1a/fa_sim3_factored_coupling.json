@@ -1,0 +1,43 @@
+{
+  "task": "FC-1a coupling probe (factored variant)",
+  "checkpoint_name": "fa_sim3_factored",
+  "n_learners": 50,
+  "n_rows": 100,
+  "geometry": {
+    "times": [
+      10,
+      100
+    ],
+    "n_dirs": 16,
+    "k": 32
+  },
+  "sensitivity": {
+    "top_tv": {
+      "mean": 0.009499522007536143,
+      "lo": 0.008719557525764686,
+      "hi": 0.010400817886868025
+    },
+    "bottom_tv": {
+      "mean": 0.01153602521517314,
+      "lo": 0.010450486709276447,
+      "hi": 0.012722151923924684
+    },
+    "isotropic_tv": {
+      "mean": 0.010308255222626031,
+      "lo": 0.009410985698457807,
+      "hi": 0.011276454219827427
+    },
+    "top_bottom_ratio": {
+      "mean": 0.8972745435614775,
+      "lo": 0.8462716512562791,
+      "hi": 0.948984837010826
+    },
+    "top_isotropic_ratio": {
+      "mean": 0.9522202125937543,
+      "lo": 0.9093229091967682,
+      "hi": 0.9948480315729705
+    }
+  },
+  "top_bottom_ratio_median": 0.8687178359474916,
+  "verdict": "DEAF_ALIGNMENT"
+}

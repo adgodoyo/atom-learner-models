@@ -1,0 +1,270 @@
+{
+ "release_name": "cw-classifier",
+ "materialize_to": "results/cw_sigma_precision_0305a22/aws/results/final.pt",
+ "config": {
+  "attempt_encoder_state_dict": {
+   "code_proj.weight": {
+    "__tensor__": "/attempt_encoder_state_dict/code_proj.weight"
+   },
+   "code_proj.bias": {
+    "__tensor__": "/attempt_encoder_state_dict/code_proj.bias"
+   },
+   "diff_proj.weight": {
+    "__tensor__": "/attempt_encoder_state_dict/diff_proj.weight"
+   },
+   "diff_proj.bias": {
+    "__tensor__": "/attempt_encoder_state_dict/diff_proj.bias"
+   },
+   "scalar_proj.weight": {
+    "__tensor__": "/attempt_encoder_state_dict/scalar_proj.weight"
+   },
+   "scalar_proj.bias": {
+    "__tensor__": "/attempt_encoder_state_dict/scalar_proj.bias"
+   },
+   "gru.weight_ih_l0": {
+    "__tensor__": "/attempt_encoder_state_dict/gru.weight_ih_l0"
+   },
+   "gru.weight_hh_l0": {
+    "__tensor__": "/attempt_encoder_state_dict/gru.weight_hh_l0"
+   },
+   "gru.bias_ih_l0": {
+    "__tensor__": "/attempt_encoder_state_dict/gru.bias_ih_l0"
+   },
+   "gru.bias_hh_l0": {
+    "__tensor__": "/attempt_encoder_state_dict/gru.bias_hh_l0"
+   },
+   "summary_head.weight": {
+    "__tensor__": "/attempt_encoder_state_dict/summary_head.weight"
+   },
+   "summary_head.bias": {
+    "__tensor__": "/attempt_encoder_state_dict/summary_head.bias"
+   }
+  },
+  "filter_state_dict": {
+   "episode_encoder.item_proj.net.0.weight": {
+    "__tensor__": "/filter_state_dict/episode_encoder.item_proj.net.0.weight"
+   },
+   "episode_encoder.item_proj.net.0.bias": {
+    "__tensor__": "/filter_state_dict/episode_encoder.item_proj.net.0.bias"
+   },
+   "episode_encoder.item_proj.net.2.weight": {
+    "__tensor__": "/filter_state_dict/episode_encoder.item_proj.net.2.weight"
+   },
+   "episode_encoder.item_proj.net.2.bias": {
+    "__tensor__": "/filter_state_dict/episode_encoder.item_proj.net.2.bias"
+   },
+   "episode_encoder.prev_proj.weight": {
+    "__tensor__": "/filter_state_dict/episode_encoder.prev_proj.weight"
+   },
+   "episode_encoder.prev_proj.bias": {
+    "__tensor__": "/filter_state_dict/episode_encoder.prev_proj.bias"
+   },
+   "knowledge_filter.gru.weight_ih_l0": {
+    "__tensor__": "/filter_state_dict/knowledge_filter.gru.weight_ih_l0"
+   },
+   "knowledge_filter.gru.weight_hh_l0": {
+    "__tensor__": "/filter_state_dict/knowledge_filter.gru.weight_hh_l0"
+   },
+   "knowledge_filter.gru.bias_ih_l0": {
+    "__tensor__": "/filter_state_dict/knowledge_filter.gru.bias_ih_l0"
+   },
+   "knowledge_filter.gru.bias_hh_l0": {
+    "__tensor__": "/filter_state_dict/knowledge_filter.gru.bias_hh_l0"
+   },
+   "knowledge_filter.mu_head.weight": {
+    "__tensor__": "/filter_state_dict/knowledge_filter.mu_head.weight"
+   },
+   "knowledge_filter.mu_head.bias": {
+    "__tensor__": "/filter_state_dict/knowledge_filter.mu_head.bias"
+   },
+   "knowledge_filter.precision_head.weight": {
+    "__tensor__": "/filter_state_dict/knowledge_filter.precision_head.weight"
+   },
+   "knowledge_filter.precision_head.bias": {
+    "__tensor__": "/filter_state_dict/knowledge_filter.precision_head.bias"
+   }
+  },
+  "outcome_head_state_dict": {
+   "trunk.net.0.weight": {
+    "__tensor__": "/outcome_head_state_dict/trunk.net.0.weight"
+   },
+   "trunk.net.0.bias": {
+    "__tensor__": "/outcome_head_state_dict/trunk.net.0.bias"
+   },
+   "trunk.net.2.weight": {
+    "__tensor__": "/outcome_head_state_dict/trunk.net.2.weight"
+   },
+   "trunk.net.2.bias": {
+    "__tensor__": "/outcome_head_state_dict/trunk.net.2.bias"
+   },
+   "prefix_proj.weight": {
+    "__tensor__": "/outcome_head_state_dict/prefix_proj.weight"
+   },
+   "prefix_proj.bias": {
+    "__tensor__": "/outcome_head_state_dict/prefix_proj.bias"
+   },
+   "gamma.weight": {
+    "__tensor__": "/outcome_head_state_dict/gamma.weight"
+   },
+   "gamma.bias": {
+    "__tensor__": "/outcome_head_state_dict/gamma.bias"
+   },
+   "beta.weight": {
+    "__tensor__": "/outcome_head_state_dict/beta.weight"
+   },
+   "beta.bias": {
+    "__tensor__": "/outcome_head_state_dict/beta.bias"
+   },
+   "outcome.weight": {
+    "__tensor__": "/outcome_head_state_dict/outcome.weight"
+   },
+   "outcome.bias": {
+    "__tensor__": "/outcome_head_state_dict/outcome.bias"
+   }
+  },
+  "y_ever_head_state_dict": {
+   "trunk.net.0.weight": {
+    "__tensor__": "/y_ever_head_state_dict/trunk.net.0.weight"
+   },
+   "trunk.net.0.bias": {
+    "__tensor__": "/y_ever_head_state_dict/trunk.net.0.bias"
+   },
+   "trunk.net.2.weight": {
+    "__tensor__": "/y_ever_head_state_dict/trunk.net.2.weight"
+   },
+   "trunk.net.2.bias": {
+    "__tensor__": "/y_ever_head_state_dict/trunk.net.2.bias"
+   },
+   "gamma.weight": {
+    "__tensor__": "/y_ever_head_state_dict/gamma.weight"
+   },
+   "gamma.bias": {
+    "__tensor__": "/y_ever_head_state_dict/gamma.bias"
+   },
+   "beta.weight": {
+    "__tensor__": "/y_ever_head_state_dict/beta.weight"
+   },
+   "beta.bias": {
+    "__tensor__": "/y_ever_head_state_dict/beta.bias"
+   },
+   "outcome.weight": {
+    "__tensor__": "/y_ever_head_state_dict/outcome.weight"
+   },
+   "outcome.bias": {
+    "__tensor__": "/y_ever_head_state_dict/outcome.bias"
+   }
+  },
+  "architecture": {
+   "latent_dim": 32,
+   "episode_hidden": 64,
+   "filter_hidden": 64,
+   "attempt_proj_dim": 32,
+   "attempt_hidden": 64,
+   "summary_dim": 16,
+   "codec_dim": 64,
+   "body": "gru",
+   "item_encoder": "mlp"
+  },
+  "codec_path": "transforms/problem_mean_L15.npz",
+  "codec_sha256": "97979d08bedb94f3477b30822040df5ba0179ec88bd6d7025df7b2a96c9781ab",
+  "codec_rank": 69,
+  "codec_k": 5,
+  "learner_split_path": "splits/cw_learner_split.csv",
+  "learner_split_sha256": "c6b8eb8c45e3ff9313a02493a40966a5ec98a09f2780a5adebfb0fc6b26b7237",
+  "item_split_sha256": null,
+  "train_regime": "cw_4_train_loop.train_one_body standalone; no backbone/LoRA/hypernetwork",
+  "seed": 0,
+  "epochs": 60,
+  "learner_batch_size": 32,
+  "learning_rate": 0.001,
+  "beta_kl": 0.01,
+  "free_bits": 0.05,
+  "likelihood": "kmixture",
+  "sigma_parameterization": "precision_accumulating",
+  "k_train": 8,
+  "k_eval": 8,
+  "y_ever_likelihood": "historical single-sample auxiliary (hybrid objective disclosed)",
+  "git_sha": "0305a22f54fce45a73475074770646750aeb35a3",
+  "sampler_semantics": "reparameterize_from_log_sigma_v1_2026-08-15",
+  "checkpoint_stage": "final",
+  "headline_metrics": {
+   "nll": 0.8754721879959106,
+   "auc_clean_full": 0.8089017393595045,
+   "mean_sigma": 0.9102626442909241,
+   "mu_between_learner_variance_share": 0.38779216115458515,
+   "log_sigma_min": -1.9698172807693481,
+   "log_sigma_max": -0.0,
+   "fixed_cohort": {
+    "history_unit": "source_causal_attempt_index",
+    "t_low": 10,
+    "t_high": 100,
+    "n_learners": 82,
+    "episode_history_low": {
+     "min": 0,
+     "mean": 2.1097560975609757,
+     "max": 8
+    },
+    "episode_history_high": {
+     "min": 3,
+     "mean": 24.23170731707317,
+     "max": 52
+    },
+    "n_problem_probes": 50,
+    "k_eval": 8,
+    "trace_sigma": {
+     "mean_t10": 30.087747271468,
+     "mean_t100": 26.82346592879877,
+     "mean_fall_t10_minus_t100": 3.264281342669231,
+     "ci95": [
+      3.0162347403968255,
+      3.533700421961342
+     ],
+     "ci_clear_fall": true,
+     "n_learners": 82,
+     "n_boot": 2000
+    },
+    "categorical_jensen_gap": {
+     "mean_t10": 0.07432322985515362,
+     "mean_t100": 0.052816360961736704,
+     "mean_fall_t10_minus_t100": 0.021506868893416915,
+     "ci95": [
+      0.015159390384058762,
+      0.028537837405711777
+     ],
+     "ci_clear_fall": true,
+     "n_learners": 82,
+     "n_boot": 2000
+    },
+    "mean_sigma": {
+     "mean_t10": 0.9658672533384184,
+     "mean_t100": 0.9071374063084765,
+     "mean_fall_t10_minus_t100": 0.058729847029941835,
+     "ci95": [
+      0.05441108605847126,
+      0.06343327835202217
+     ],
+     "ci_clear_fall": true,
+     "n_learners": 82,
+     "n_boot": 2000
+    }
+   },
+   "thresholds": {
+    "nll_max": 0.8876000000000001,
+    "auc_min": 0.8008,
+    "mu_share_min": 0.4358
+   },
+   "gates": {
+    "trace_ci_clear_fall": true,
+    "jensen_gap_ci_clear_fall": true,
+    "nll_within_seed_floor": true,
+    "auc_within_seed_floor": true,
+    "mu_share_not_reduced": false,
+    "log_sigma_off_both_clamps": true
+   },
+   "passed": false
+  },
+  "prediction_path": "results/cw_sigma_precision_0305a22/val_predictions.npz",
+  "fixed_cohort_curve_path": "results/cw_sigma_precision_0305a22/fixed_cohort_curve.npz",
+  "elapsed_s": 225.964124917984
+ }
+}

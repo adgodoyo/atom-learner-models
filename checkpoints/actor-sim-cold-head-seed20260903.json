@@ -1,0 +1,70 @@
+{
+ "release_name": "actor-sim-cold-head-seed20260903",
+ "materialize_to": "results/rl_2/ratchet-cwsim_cold-head/policy_seed20260903.pt",
+ "config": {
+  "actor": {
+   "enc.0.weight": {
+    "__tensor__": "/actor/enc.0.weight"
+   },
+   "enc.0.bias": {
+    "__tensor__": "/actor/enc.0.bias"
+   },
+   "enc.2.weight": {
+    "__tensor__": "/actor/enc.2.weight"
+   },
+   "enc.2.bias": {
+    "__tensor__": "/actor/enc.2.bias"
+   },
+   "state.0.weight": {
+    "__tensor__": "/actor/state.0.weight"
+   },
+   "state.0.bias": {
+    "__tensor__": "/actor/state.0.bias"
+   },
+   "out.0.weight": {
+    "__tensor__": "/actor/out.0.weight"
+   },
+   "out.0.bias": {
+    "__tensor__": "/actor/out.0.bias"
+   },
+   "out.2.weight": {
+    "__tensor__": "/actor/out.2.weight"
+   },
+   "out.2.bias": {
+    "__tensor__": "/actor/out.2.bias"
+   }
+  },
+  "critic": {
+   "net.0.weight": {
+    "__tensor__": "/critic/net.0.weight"
+   },
+   "net.0.bias": {
+    "__tensor__": "/critic/net.0.bias"
+   },
+   "net.2.weight": {
+    "__tensor__": "/critic/net.2.weight"
+   },
+   "net.2.bias": {
+    "__tensor__": "/critic/net.2.bias"
+   },
+   "net.4.weight": {
+    "__tensor__": "/critic/net.4.weight"
+   },
+   "net.4.bias": {
+    "__tensor__": "/critic/net.4.bias"
+   }
+  },
+  "selected_epoch": 1,
+  "validation_score": 0.0073074363231509605,
+  "deployable_inputs": [
+   "belief_summary",
+   "remaining_menu_codecs",
+   "predictive_distribution",
+   "predictive_entropy",
+   "k_spread",
+   "step",
+   "budget"
+  ],
+  "reference_used_at_deployment": false
+ }
+}

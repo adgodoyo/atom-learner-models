@@ -1,0 +1,26 @@
+# environments and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+# never commit data or anything derived row by row from it
+/data/
+/cache/
+*.parquet
+*.jsonl
+generations*
+artifacts/fa_manifest_v2*
+artifacts/cw_coding_bat_recovery_raw.json
+artifacts/cw_problem_statements.json
+results/**/predictions*
+results/**/*rows*
+results/**/belief_diagnostics.npz
+# rebuilt checkpoints (from checkpoints/*.safetensors) and run outputs
+*.pt
+runs/*
+!runs/.gitkeep
+reports/*
+!reports/README.md
+checkpoints/fa-sim3.safetensors
+checkpoints/cw-sim.safetensors

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-09-03T09:17:56Z",
+  "stage": "tier0_complete",
+  "done": 1,
+  "total": 1,
+  "elapsed_s": 21436.28031229973,
+  "stage_elapsed_s": 0.0,
+  "projected_stage_s": 27000.0,
+  "fuse_minutes": 900,
+  "parse_rate": 1.0,
+  "wall_s": 21435.03641486168
+}

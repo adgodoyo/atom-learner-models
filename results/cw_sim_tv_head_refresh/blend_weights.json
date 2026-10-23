@@ -1,0 +1,20 @@
+{
+  "old": {
+    "w1_head": 0.10967397689819336,
+    "w2_base_rate": 0.910981297492981,
+    "n_fit_rows": 83553,
+    "degenerate": false
+  },
+  "refreshed": {
+    "w1_head": 2.289531707763672,
+    "w2_base_rate": -1.2811610698699951,
+    "n_fit_rows": 83553,
+    "degenerate": false
+  },
+  "refreshed_null_prefix": {
+    "w1_head": 2.262922763824463,
+    "w2_base_rate": -1.2489068508148193,
+    "n_fit_rows": 83553,
+    "degenerate": false
+  }
+}

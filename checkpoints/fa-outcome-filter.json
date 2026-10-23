@@ -1,0 +1,104 @@
+{
+ "release_name": "fa-outcome-filter",
+ "materialize_to": "artifacts/checkpoints/fa_outcome_filter.pt",
+ "config": {
+  "model_state_dict": {
+   "episode_encoder.item_proj.net.0.weight": {
+    "__tensor__": "/model_state_dict/episode_encoder.item_proj.net.0.weight"
+   },
+   "episode_encoder.item_proj.net.0.bias": {
+    "__tensor__": "/model_state_dict/episode_encoder.item_proj.net.0.bias"
+   },
+   "episode_encoder.item_proj.net.2.weight": {
+    "__tensor__": "/model_state_dict/episode_encoder.item_proj.net.2.weight"
+   },
+   "episode_encoder.item_proj.net.2.bias": {
+    "__tensor__": "/model_state_dict/episode_encoder.item_proj.net.2.bias"
+   },
+   "episode_encoder.prev_proj.weight": {
+    "__tensor__": "/model_state_dict/episode_encoder.prev_proj.weight"
+   },
+   "episode_encoder.prev_proj.bias": {
+    "__tensor__": "/model_state_dict/episode_encoder.prev_proj.bias"
+   },
+   "knowledge_filter.gru.weight_ih_l0": {
+    "__tensor__": "/model_state_dict/knowledge_filter.gru.weight_ih_l0"
+   },
+   "knowledge_filter.gru.weight_hh_l0": {
+    "__tensor__": "/model_state_dict/knowledge_filter.gru.weight_hh_l0"
+   },
+   "knowledge_filter.gru.bias_ih_l0": {
+    "__tensor__": "/model_state_dict/knowledge_filter.gru.bias_ih_l0"
+   },
+   "knowledge_filter.gru.bias_hh_l0": {
+    "__tensor__": "/model_state_dict/knowledge_filter.gru.bias_hh_l0"
+   },
+   "knowledge_filter.mu_head.weight": {
+    "__tensor__": "/model_state_dict/knowledge_filter.mu_head.weight"
+   },
+   "knowledge_filter.mu_head.bias": {
+    "__tensor__": "/model_state_dict/knowledge_filter.mu_head.bias"
+   },
+   "knowledge_filter.log_sigma_head.weight": {
+    "__tensor__": "/model_state_dict/knowledge_filter.log_sigma_head.weight"
+   },
+   "knowledge_filter.log_sigma_head.bias": {
+    "__tensor__": "/model_state_dict/knowledge_filter.log_sigma_head.bias"
+   }
+  },
+  "heads_state_dict": {
+   "trunk.net.0.weight": {
+    "__tensor__": "/heads_state_dict/trunk.net.0.weight"
+   },
+   "trunk.net.0.bias": {
+    "__tensor__": "/heads_state_dict/trunk.net.0.bias"
+   },
+   "trunk.net.2.weight": {
+    "__tensor__": "/heads_state_dict/trunk.net.2.weight"
+   },
+   "trunk.net.2.bias": {
+    "__tensor__": "/heads_state_dict/trunk.net.2.bias"
+   },
+   "gamma.weight": {
+    "__tensor__": "/heads_state_dict/gamma.weight"
+   },
+   "gamma.bias": {
+    "__tensor__": "/heads_state_dict/gamma.bias"
+   },
+   "beta.weight": {
+    "__tensor__": "/heads_state_dict/beta.weight"
+   },
+   "beta.bias": {
+    "__tensor__": "/heads_state_dict/beta.bias"
+   },
+   "correctness.weight": {
+    "__tensor__": "/heads_state_dict/correctness.weight"
+   },
+   "correctness.bias": {
+    "__tensor__": "/heads_state_dict/correctness.bias"
+   },
+   "engagement.weight": {
+    "__tensor__": "/heads_state_dict/engagement.weight"
+   },
+   "engagement.bias": {
+    "__tensor__": "/heads_state_dict/engagement.bias"
+   }
+  },
+  "architecture": {
+   "class": "S1FilterV2ItemMLP/FiLMHeadsItemMLP",
+   "latent_dim": 256,
+   "filter_hidden": 256,
+   "episode_hidden": 256,
+   "codec_dim": 64,
+   "query_independent": true
+  },
+  "codec_path": "artifacts/fa_item_codec_dim64.npz",
+  "train_regime": "all items (all train-learner events; no item holdout applied)",
+  "item_split_sha256": "3eaf60e85521612c2564a0a48149eb5b2ea2775c6127a4bb44a0a45b7f026851",
+  "learner_split_sha256": "f819eabd7d38d0580308d0f74e19aa9f8d53a7fd7ada3f7d79ed852745a7a94c",
+  "support_none_pooled_auc": 0.6912516748844633,
+  "within_item_auc": 0.62004244101697,
+  "epochs": 400,
+  "seed": 0
+ }
+}

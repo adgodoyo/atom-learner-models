@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this code or these models, please cite the thesis."
+title: "ATOM: code and models for 'Reading Minds, Imagining, Then Acting'"
+type: software
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/adgodoyo/atom-learner-models"
+authors:
+  - given-names: "Andrés Daniel"
+    family-names: "Godoy Ortiz"
+    email: adgodoyo@gmail.com
+    affiliation: "Imperial College London"
+preferred-citation:
+  type: thesis
+  title: "Reading Minds, Imagining, Then Acting: Simulating and Probing Other Agents' Latent World Models"
+  authors:
+    - given-names: "Andrés Daniel"
+      family-names: "Godoy Ortiz"
+  thesis-type: "MSc thesis"
+  institution:
+    name: "Imperial College London"
+  year: 2026
+  month: 9

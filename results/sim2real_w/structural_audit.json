@@ -1,0 +1,159 @@
+{
+  "status": "pass",
+  "seed": 20260904,
+  "fit_learners": 543,
+  "smoke_learners": 20,
+  "starts": [
+    3,
+    10
+  ],
+  "menu_size": 16,
+  "target_n": 5,
+  "expected_corpus_rows": 32896,
+  "full_menu_size_total": 8224,
+  "full_start_counts": {
+    "10": 260,
+    "3": 283
+  },
+  "smoke_rows_if_pass": 1212,
+  "smoke_menu_sizes": [
+    16,
+    16,
+    16,
+    16,
+    1,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    14,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16
+  ],
+  "smoke_start_counts": {
+    "10": 13,
+    "3": 7
+  },
+  "menu_rule": "min(16, candidate_pool_size), without replacement",
+  "start_rule": "uniform over feasible starts in {3,10}; start3 fallback when start10 unavailable",
+  "smoke_failures": [],
+  "fit_availability": {
+    "start3_n_ge_16": 503,
+    "start3_n_lt_16": 40,
+    "start10_n_ge_16": 484,
+    "start10_n_lt_16": 59
+  },
+  "short_examples": [
+    {
+      "learner": "learner 1",
+      "start": 3,
+      "candidate_pool": 8
+    },
+    {
+      "learner": "learner 1",
+      "start": 10,
+      "candidate_pool": 1
+    },
+    {
+      "learner": "learner 2",
+      "start": 3,
+      "candidate_pool": 14
+    },
+    {
+      "learner": "learner 2",
+      "start": 10,
+      "candidate_pool": 7
+    },
+    {
+      "learner": "learner 3",
+      "start": 10,
+      "candidate_pool": 13
+    },
+    {
+      "learner": "learner 4",
+      "start": 10,
+      "candidate_pool": 15
+    },
+    {
+      "learner": "learner 5",
+      "start": 3,
+      "candidate_pool": 8
+    },
+    {
+      "learner": "learner 5",
+      "start": 10,
+      "candidate_pool": 1
+    },
+    {
+      "learner": "learner 6",
+      "start": 3,
+      "candidate_pool": 1
+    },
+    {
+      "learner": "learner 6",
+      "start": 10,
+      "candidate_pool": 0
+    },
+    {
+      "learner": "learner 7",
+      "start": 3,
+      "candidate_pool": 8
+    },
+    {
+      "learner": "learner 7",
+      "start": 10,
+      "candidate_pool": 1
+    },
+    {
+      "learner": "learner 8",
+      "start": 3,
+      "candidate_pool": 8
+    },
+    {
+      "learner": "learner 8",
+      "start": 10,
+      "candidate_pool": 1
+    },
+    {
+      "learner": "learner 9",
+      "start": 3,
+      "candidate_pool": 13
+    },
+    {
+      "learner": "learner 9",
+      "start": 10,
+      "candidate_pool": 6
+    },
+    {
+      "learner": "learner 10",
+      "start": 10,
+      "candidate_pool": 10
+    },
+    {
+      "learner": "learner 11",
+      "start": 10,
+      "candidate_pool": 10
+    },
+    {
+      "learner": "learner 12",
+      "start": 3,
+      "candidate_pool": 2
+    },
+    {
+      "learner": "learner 12",
+      "start": 10,
+      "candidate_pool": 0
+    }
+  ],
+  "generated_text": false,
+  "gpu_launched": false,
+  "real_outcome_rows_in_training": 0
+}

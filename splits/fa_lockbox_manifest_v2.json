@@ -1,0 +1,10 @@
+{
+  "sha256": "fbf1bd4a6f5a5f9288868312c8b1fda0eec03b70b62e89b2ad9a5153d56733b3",
+  "n_rows": 26484,
+  "n_learners": 500,
+  "n_item_groups": 467,
+  "git_sha": "63b49ee",
+  "config_hash": "6bc4864a53",
+  "run_id": "20260809T210243-6bc486",
+  "note": "Strict lockbox cell (learner split == lockbox AND item split == heldout). Rows never read after this seal; touch only once, at FA-9 final confirmation."
+}

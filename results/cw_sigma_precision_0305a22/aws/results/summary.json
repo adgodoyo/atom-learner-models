@@ -1,0 +1,106 @@
+{
+  "artifacts": {
+    "final_checkpoint": "results/cw_sigma_precision_0305a22/final.pt",
+    "fixed_cohort_curve": "results/cw_sigma_precision_0305a22/fixed_cohort_curve.npz",
+    "post_train_checkpoint": "results/cw_sigma_precision_0305a22/post_train.pt",
+    "predictions": "results/cw_sigma_precision_0305a22/val_predictions.npz"
+  },
+  "config": {
+    "beta_kl": 0.01,
+    "body": "gru",
+    "codec_dim": 64,
+    "epochs": 60,
+    "estimated_minutes": 30.0,
+    "free_bits": 0.05,
+    "item_encoder": "mlp",
+    "k_eval": 8,
+    "k_train": 8,
+    "likelihood": "kmixture",
+    "sampler_semantics": "reparameterize_from_log_sigma_v1_2026-08-15",
+    "seed": 0,
+    "sigma_parameterization": "precision_accumulating",
+    "task": "cw_sigma"
+  },
+  "device": "cuda",
+  "elapsed_s": 225.97643280029297,
+  "git_sha": "0305a22f54fce45a73475074770646750aeb35a3",
+  "metrics": {
+    "auc_clean_full": 0.8089017393595045,
+    "fixed_cohort": {
+      "categorical_jensen_gap": {
+        "ci95": [
+          0.015159390384058762,
+          0.028537837405711777
+        ],
+        "ci_clear_fall": true,
+        "mean_fall_t10_minus_t100": 0.021506868893416915,
+        "mean_t10": 0.07432322985515362,
+        "mean_t100": 0.052816360961736704,
+        "n_boot": 2000,
+        "n_learners": 82
+      },
+      "episode_history_high": {
+        "max": 52,
+        "mean": 24.23170731707317,
+        "min": 3
+      },
+      "episode_history_low": {
+        "max": 8,
+        "mean": 2.1097560975609757,
+        "min": 0
+      },
+      "history_unit": "source_causal_attempt_index",
+      "k_eval": 8,
+      "mean_sigma": {
+        "ci95": [
+          0.05441108605847126,
+          0.06343327835202217
+        ],
+        "ci_clear_fall": true,
+        "mean_fall_t10_minus_t100": 0.058729847029941835,
+        "mean_t10": 0.9658672533384184,
+        "mean_t100": 0.9071374063084765,
+        "n_boot": 2000,
+        "n_learners": 82
+      },
+      "n_learners": 82,
+      "n_problem_probes": 50,
+      "t_high": 100,
+      "t_low": 10,
+      "trace_sigma": {
+        "ci95": [
+          3.0162347403968255,
+          3.533700421961342
+        ],
+        "ci_clear_fall": true,
+        "mean_fall_t10_minus_t100": 3.264281342669231,
+        "mean_t10": 30.087747271468,
+        "mean_t100": 26.82346592879877,
+        "n_boot": 2000,
+        "n_learners": 82
+      }
+    },
+    "gates": {
+      "auc_within_seed_floor": true,
+      "jensen_gap_ci_clear_fall": true,
+      "log_sigma_off_both_clamps": true,
+      "mu_share_not_reduced": false,
+      "nll_within_seed_floor": true,
+      "trace_ci_clear_fall": true
+    },
+    "log_sigma_max": -0.0,
+    "log_sigma_min": -1.9698172807693481,
+    "mean_sigma": 0.9102626442909241,
+    "mu_between_learner_variance_share": 0.38779216115458515,
+    "nll": 0.8754721879959106,
+    "passed": false,
+    "thresholds": {
+      "auc_min": 0.8008,
+      "mu_share_min": 0.4358,
+      "nll_max": 0.8876000000000001
+    }
+  },
+  "run_id": "20260823T163143-114313",
+  "status": "gate-fail",
+  "task": "cw_sigma"
+}

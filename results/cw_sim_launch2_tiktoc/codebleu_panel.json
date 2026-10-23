@@ -1,0 +1,16 @@
+{
+  "n_rows_total": 3714,
+  "n_rows_no_statement": 0,
+  "n_rows_generation_eligible": 3714,
+  "n_generations": 11127,
+  "codebleu_by_mode": {
+    "conditional_imitation": 0.5389505287402337,
+    "ancestral": 0.5469791162635261,
+    "argmax": 0.5604780083925517
+  },
+  "n_codebleu_scored": 11127,
+  "reference": {
+    "TIKTOC": 0.554,
+    "OKT-TC": 0.522
+  }
+}

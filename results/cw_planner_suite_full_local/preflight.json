@@ -1,0 +1,49 @@
+{
+  "status": "complete",
+  "metric": "centered_point_logit_mse",
+  "n_learners": 110,
+  "k_values": [
+    3,
+    5,
+    10
+  ],
+  "probe_items": 5,
+  "sampler_semantics": "reparameterize_from_log_sigma_v1_2026-08-15",
+  "V1_placebo": {
+    "median_own_closure": 0.09957222254214444,
+    "median_placebo_closure": 0.02217083898998029,
+    "ratio": 0.22266088296458755,
+    "kill_threshold_ratio": 0.9,
+    "pass": true
+  },
+  "V2_gauge": {
+    "centered_shift_delta": 2.465190328815662e-33,
+    "uncentered_shift_delta": 0.38257544402033083,
+    "centered_tolerance": 1e-08,
+    "uncentered_minimum": 1e-06,
+    "pass": true
+  },
+  "V3_drift": {
+    "spearman_prefix_gap_full_vs_trim": 0.7224887096319657,
+    "kill_threshold": 0.8,
+    "pass": false
+  },
+  "V4_future_gap": {
+    "spearman_logit_vs_predictive_gap": 0.9756205036496779,
+    "kill_threshold": 0.2,
+    "pass": true
+  },
+  "per_semester": {
+    "F19": {
+      "n": 159,
+      "median_own_closure": 0.0900726473652611,
+      "median_placebo_closure": 0.08580101330017689
+    },
+    "S19": {
+      "n": 171,
+      "median_own_closure": 0.11626945776182865,
+      "median_placebo_closure": -0.023989808871990648
+    }
+  },
+  "all_pass": false
+}

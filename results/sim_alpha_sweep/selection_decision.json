@@ -1,0 +1,143 @@
+{
+  "grid": [
+    0.3,
+    0.75,
+    1.0,
+    1.5,
+    2.0
+  ],
+  "grid_amendment": "alpha=1.0 added to the original grid {0.3, 0.75, 1.5, 2.0}",
+  "control_alpha": 0.3,
+  "log_loss_tolerance": 0.02,
+  "qualifiers": [
+    0.3,
+    0.75,
+    1.0
+  ],
+  "alpha_star_largest_qualifying": 1.0,
+  "alpha_star_max_personalisation_gap": 0.75,
+  "two_criteria_coincide": false,
+  "alpha_star": 1.0,
+  "branch": "alpha=1.0 qualified and is the largest qualifying value -- round 2 trains fresh at this alpha",
+  "per_arm": {
+    "0.3": {
+      "alpha": 0.3,
+      "log_loss_5class_overall": 0.850399374961853,
+      "log_loss_delta_vs_control": 0.0,
+      "personalisation_advantage_nll": 0.009921550750732422,
+      "personalised_mixture_nll_mean": 0.6412997841835022,
+      "shuffled_u_mixture_nll_mean": 0.6512213349342346,
+      "gate_i_log_loss_ok": true,
+      "gate_ii_wd_auc_ok": true,
+      "qualifies": true
+    },
+    "0.75": {
+      "alpha": 0.75,
+      "log_loss_5class_overall": 0.8491746187210083,
+      "log_loss_delta_vs_control": -0.0012247562408447266,
+      "personalisation_advantage_nll": 0.0148659348487854,
+      "personalised_mixture_nll_mean": 0.6486328840255737,
+      "shuffled_u_mixture_nll_mean": 0.6634988188743591,
+      "gate_i_log_loss_ok": true,
+      "gate_ii_wd_auc_ok": true,
+      "wd_auc_diff_vs_control_bottom_tercile": {
+        "auc_unaided_wrong": {
+          "point": 0.0020314356224050423,
+          "ci95": [
+            0.0010140809068417162,
+            0.0030325236963860886
+          ]
+        },
+        "auc_not_unaided_correct": {
+          "point": 0.0009970056610670852,
+          "ci95": [
+            0.0004507084952381363,
+            0.0015697885750186353
+          ]
+        }
+      },
+      "qualifies": true
+    },
+    "1.0": {
+      "alpha": 1.0,
+      "log_loss_5class_overall": 0.8524171113967896,
+      "log_loss_delta_vs_control": 0.0020177364349365234,
+      "personalisation_advantage_nll": 0.010903477668762207,
+      "personalised_mixture_nll_mean": 0.6252087950706482,
+      "shuffled_u_mixture_nll_mean": 0.6361122727394104,
+      "gate_i_log_loss_ok": true,
+      "gate_ii_wd_auc_ok": true,
+      "wd_auc_diff_vs_control_bottom_tercile": {
+        "auc_unaided_wrong": {
+          "point": -0.0005555416093394605,
+          "ci95": [
+            -0.0020077956039819046,
+            0.0008337936838039653
+          ]
+        },
+        "auc_not_unaided_correct": {
+          "point": 0.00010258009398134149,
+          "ci95": [
+            -0.0004508673967190818,
+            0.0007798522786516048
+          ]
+        }
+      },
+      "qualifies": true
+    },
+    "1.5": {
+      "alpha": 1.5,
+      "log_loss_5class_overall": 0.8532583117485046,
+      "log_loss_delta_vs_control": 0.0028589367866516113,
+      "personalisation_advantage_nll": 0.012726068496704102,
+      "personalised_mixture_nll_mean": 0.6172350645065308,
+      "shuffled_u_mixture_nll_mean": 0.6299611330032349,
+      "gate_i_log_loss_ok": true,
+      "gate_ii_wd_auc_ok": false,
+      "wd_auc_diff_vs_control_bottom_tercile": {
+        "auc_unaided_wrong": {
+          "point": -0.0025508300353070945,
+          "ci95": [
+            -0.003782012054730874,
+            -0.0014501085643145646
+          ]
+        },
+        "auc_not_unaided_correct": {
+          "point": 0.0010104600511018358,
+          "ci95": [
+            0.0005664115166125084,
+            0.001471467299382037
+          ]
+        }
+      },
+      "qualifies": false
+    },
+    "2.0": {
+      "alpha": 2.0,
+      "log_loss_5class_overall": 0.8586058616638184,
+      "log_loss_delta_vs_control": 0.008206486701965332,
+      "personalisation_advantage_nll": 0.008061528205871582,
+      "personalised_mixture_nll_mean": 0.6327441930770874,
+      "shuffled_u_mixture_nll_mean": 0.640805721282959,
+      "gate_i_log_loss_ok": true,
+      "gate_ii_wd_auc_ok": false,
+      "wd_auc_diff_vs_control_bottom_tercile": {
+        "auc_unaided_wrong": {
+          "point": -0.010931712078011357,
+          "ci95": [
+            -0.013286411627283353,
+            -0.008612552530507914
+          ]
+        },
+        "auc_not_unaided_correct": {
+          "point": 0.0009790348680938088,
+          "ci95": [
+            9.283276558626488e-05,
+            0.0018232939482206306
+          ]
+        }
+      },
+      "qualifies": false
+    }
+  }
+}

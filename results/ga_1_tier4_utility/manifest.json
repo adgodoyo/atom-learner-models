@@ -1,0 +1,405 @@
+{
+  "lane": "T4",
+  "rung": "A",
+  "substrate": "ratchet-cwsim/refreshed-head",
+  "bundle": {
+    "name": "ratchet-cwsim/refreshed-head",
+    "source": "CodeWorkout generative simulator belief handoff (refreshed outcome head)",
+    "checkpoint": "results/cw_sim_head_refresh/final.pt",
+    "beliefs": "artifacts/cw_sim_refreshed_head_val_prefix_beliefs.npz",
+    "checkpoint_sha256_recorded": "e32b85e69722e56bf53f88ec0acb4ca214f0e259321323659de94368505f0022",
+    "checkpoint_sha256": "e32b85e69722e56bf53f88ec0acb4ca214f0e259321323659de94368505f0022",
+    "bundle_keys": [
+      "beliefs_path",
+      "beliefs_sha256",
+      "checkpoint_sha256",
+      "metadata",
+      "model"
+    ]
+  },
+  "handoff": {
+    "path": "artifacts/cw_sim_refreshed_head_val_prefix_beliefs.npz",
+    "sha256": "10ca4e9aea005b76346e1b18ae501a3d973417b562cb26fe1654647418125c03",
+    "fields": [
+      "checkpoint",
+      "checkpoint_sha256",
+      "episode_id",
+      "learner",
+      "log_sigma",
+      "mu",
+      "release"
+    ],
+    "n_rows": 5452,
+    "latent_dim": 32,
+    "finite": true
+  },
+  "pilot": false,
+  "n_train_start0_learners": 679,
+  "n_fit_learners": 543,
+  "n_utility_fit_learners": 434,
+  "n_utility_internal_learners": 109,
+  "n_val_learners": 110,
+  "budgets": [
+    3,
+    8,
+    16
+  ],
+  "start": 0,
+  "n_states": {
+    "fit": 11495,
+    "internal": 2875,
+    "test": 2840
+  },
+  "draw_digest": {
+    "fit": "0af1c5b965e07463f17b1bd9f98f1628be2ac65e51160a0c7b158d8612bc847f",
+    "internal": "808d251ad0b3bcb8971753d0495c958d2606bbba65abbea88dd4c917e9e219da",
+    "test": "fd142c8a5eb18c499e19b64d32ba90b0ed6c5d3042494e7075ecc0249bfc1fe8"
+  },
+  "item_split": {
+    "seed": 20260903,
+    "train_items": [
+      1,
+      3,
+      12,
+      13,
+      17,
+      20,
+      21,
+      22,
+      24,
+      25,
+      32,
+      33,
+      34,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      46,
+      49,
+      51,
+      56,
+      57,
+      64,
+      67,
+      70,
+      71,
+      100,
+      101,
+      102,
+      104,
+      106,
+      108,
+      112,
+      118,
+      128,
+      233,
+      235,
+      236
+    ],
+    "heldout_items": [
+      5,
+      28,
+      31,
+      43,
+      44,
+      45,
+      48,
+      107,
+      232,
+      234
+    ]
+  },
+  "utility": {
+    "input_dim": 78,
+    "architecture": "rl_2.PointerActorV2",
+    "lr": 0.001,
+    "lambda_regression": 0.1,
+    "grad_clip": 1.0,
+    "max_epochs": 60,
+    "patience": 5,
+    "batch_states": 64,
+    "seeds": [
+      20260902,
+      20260903,
+      20260904
+    ]
+  },
+  "canaries": {
+    "item_disjoint_by_value": "pass",
+    "reward_reconstruction_max_abs_error": 0.0,
+    "reward_reconstruction_probe_states": 100
+  },
+  "train_meta": [
+    {
+      "seed": 20260902,
+      "selected_epoch": 17,
+      "best_internal_rank_acc": 0.5556061938552797,
+      "epochs_run": 22,
+      "epoch_rows": [
+        {
+          "epoch": 1,
+          "loss_mean": 0.7800363467799293,
+          "internal_rank_acc": 0.5424195058730538
+        },
+        {
+          "epoch": 2,
+          "loss_mean": 0.7785573720932006,
+          "internal_rank_acc": 0.5440238696285324
+        },
+        {
+          "epoch": 3,
+          "loss_mean": 0.7774543007214864,
+          "internal_rank_acc": 0.5460184647812604
+        },
+        {
+          "epoch": 4,
+          "loss_mean": 0.7747848937908809,
+          "internal_rank_acc": 0.549341840567687
+        },
+        {
+          "epoch": 5,
+          "loss_mean": 0.7735262178712421,
+          "internal_rank_acc": 0.5498630985654723
+        },
+        {
+          "epoch": 6,
+          "loss_mean": 0.7721056368615892,
+          "internal_rank_acc": 0.5492392980107456
+        },
+        {
+          "epoch": 7,
+          "loss_mean": 0.7714227189620336,
+          "internal_rank_acc": 0.5502326790311153
+        },
+        {
+          "epoch": 8,
+          "loss_mean": 0.7703510360585318,
+          "internal_rank_acc": 0.5512709224201467
+        },
+        {
+          "epoch": 9,
+          "loss_mean": 0.7704360518190596,
+          "internal_rank_acc": 0.5448662852178495
+        },
+        {
+          "epoch": 10,
+          "loss_mean": 0.7693396041790644,
+          "internal_rank_acc": 0.5500126397943452
+        },
+        {
+          "epoch": 11,
+          "loss_mean": 0.7688699106375376,
+          "internal_rank_acc": 0.5502632993779797
+        },
+        {
+          "epoch": 12,
+          "loss_mean": 0.7685254984431796,
+          "internal_rank_acc": 0.5539448620126113
+        },
+        {
+          "epoch": 13,
+          "loss_mean": 0.7680717852380541,
+          "internal_rank_acc": 0.5516234124596328
+        },
+        {
+          "epoch": 14,
+          "loss_mean": 0.7677559859222836,
+          "internal_rank_acc": 0.5520812934604197
+        },
+        {
+          "epoch": 15,
+          "loss_mean": 0.7675847556855944,
+          "internal_rank_acc": 0.5521610487824852
+        },
+        {
+          "epoch": 16,
+          "loss_mean": 0.7668240490886901,
+          "internal_rank_acc": 0.5533538181080186
+        },
+        {
+          "epoch": 17,
+          "loss_mean": 0.7664856546454959,
+          "internal_rank_acc": 0.5556061938552797
+        },
+        {
+          "epoch": 18,
+          "loss_mean": 0.7662465893559985,
+          "internal_rank_acc": 0.5520464005070159
+        },
+        {
+          "epoch": 19,
+          "loss_mean": 0.7657516416576173,
+          "internal_rank_acc": 0.5455534627695747
+        },
+        {
+          "epoch": 20,
+          "loss_mean": 0.7650797433323331,
+          "internal_rank_acc": 0.5509575979406036
+        },
+        {
+          "epoch": 21,
+          "loss_mean": 0.7647299806276957,
+          "internal_rank_acc": 0.5554495316155081
+        },
+        {
+          "epoch": 22,
+          "loss_mean": 0.7641154236263699,
+          "internal_rank_acc": 0.5530668413688007
+        }
+      ],
+      "stopping_reason": "patience"
+    },
+    {
+      "seed": 20260903,
+      "selected_epoch": 9,
+      "best_internal_rank_acc": 0.553798169188098,
+      "epochs_run": 14,
+      "epoch_rows": [
+        {
+          "epoch": 1,
+          "loss_mean": 0.779766881134775,
+          "internal_rank_acc": 0.5441399421061814
+        },
+        {
+          "epoch": 2,
+          "loss_mean": 0.7784929947720634,
+          "internal_rank_acc": 0.5457706536019853
+        },
+        {
+          "epoch": 3,
+          "loss_mean": 0.7771471977233887,
+          "internal_rank_acc": 0.5476904781402768
+        },
+        {
+          "epoch": 4,
+          "loss_mean": 0.7742450283633338,
+          "internal_rank_acc": 0.550245496850733
+        },
+        {
+          "epoch": 5,
+          "loss_mean": 0.7725437002049552,
+          "internal_rank_acc": 0.5516518965032275
+        },
+        {
+          "epoch": 6,
+          "loss_mean": 0.7716188026799096,
+          "internal_rank_acc": 0.5505032774452662
+        },
+        {
+          "epoch": 7,
+          "loss_mean": 0.7706898083289464,
+          "internal_rank_acc": 0.5529863739456453
+        },
+        {
+          "epoch": 8,
+          "loss_mean": 0.7699205795923869,
+          "internal_rank_acc": 0.5506727575046554
+        },
+        {
+          "epoch": 9,
+          "loss_mean": 0.7694697386688656,
+          "internal_rank_acc": 0.553798169188098
+        },
+        {
+          "epoch": 10,
+          "loss_mean": 0.7688449660936991,
+          "internal_rank_acc": 0.5514389782773562
+        },
+        {
+          "epoch": 11,
+          "loss_mean": 0.7685774644215901,
+          "internal_rank_acc": 0.5512025607155192
+        },
+        {
+          "epoch": 12,
+          "loss_mean": 0.7681208163499832,
+          "internal_rank_acc": 0.5526609437475744
+        },
+        {
+          "epoch": 13,
+          "loss_mean": 0.7677599244647556,
+          "internal_rank_acc": 0.5536237044210797
+        },
+        {
+          "epoch": 14,
+          "loss_mean": 0.7674082063966328,
+          "internal_rank_acc": 0.5531544298028548
+        }
+      ],
+      "stopping_reason": "patience"
+    },
+    {
+      "seed": 20260904,
+      "selected_epoch": 7,
+      "best_internal_rank_acc": 0.5531309304668891,
+      "epochs_run": 12,
+      "epoch_rows": [
+        {
+          "epoch": 1,
+          "loss_mean": 0.7798764745394389,
+          "internal_rank_acc": 0.5415827870924557
+        },
+        {
+          "epoch": 2,
+          "loss_mean": 0.7786953147914675,
+          "internal_rank_acc": 0.5464129687850487
+        },
+        {
+          "epoch": 3,
+          "loss_mean": 0.7773469458023707,
+          "internal_rank_acc": 0.5464129687850487
+        },
+        {
+          "epoch": 4,
+          "loss_mean": 0.7746286971701516,
+          "internal_rank_acc": 0.5507347102994741
+        },
+        {
+          "epoch": 5,
+          "loss_mean": 0.7732345938682557,
+          "internal_rank_acc": 0.5471151004596613
+        },
+        {
+          "epoch": 6,
+          "loss_mean": 0.7724462224377526,
+          "internal_rank_acc": 0.5508322681487864
+        },
+        {
+          "epoch": 7,
+          "loss_mean": 0.7712343103355832,
+          "internal_rank_acc": 0.5531309304668891
+        },
+        {
+          "epoch": 8,
+          "loss_mean": 0.7703943732712004,
+          "internal_rank_acc": 0.5521653213890244
+        },
+        {
+          "epoch": 9,
+          "loss_mean": 0.7695020473665661,
+          "internal_rank_acc": 0.5529336784649949
+        },
+        {
+          "epoch": 10,
+          "loss_mean": 0.7691782424847285,
+          "internal_rank_acc": 0.5520179164634211
+        },
+        {
+          "epoch": 11,
+          "loss_mean": 0.7692852824926376,
+          "internal_rank_acc": 0.5509454922220759
+        },
+        {
+          "epoch": 12,
+          "loss_mean": 0.7684931251737807,
+          "internal_rank_acc": 0.5511712282675648
+        }
+      ],
+      "stopping_reason": "patience"
+    }
+  ],
+  "elapsed_s": 247.9878740310669
+}

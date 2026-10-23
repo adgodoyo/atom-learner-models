@@ -1,0 +1,782 @@
+{
+ "release_name": "cw-sim",
+ "materialize_to": "results/cw_sim_base_run/final.pt",
+ "config": {
+  "filter_mode": "joint",
+  "attempt_encoder": {
+   "code_proj.weight": {
+    "__tensor__": "/attempt_encoder/code_proj.weight"
+   },
+   "code_proj.bias": {
+    "__tensor__": "/attempt_encoder/code_proj.bias"
+   },
+   "diff_proj.weight": {
+    "__tensor__": "/attempt_encoder/diff_proj.weight"
+   },
+   "diff_proj.bias": {
+    "__tensor__": "/attempt_encoder/diff_proj.bias"
+   },
+   "scalar_proj.weight": {
+    "__tensor__": "/attempt_encoder/scalar_proj.weight"
+   },
+   "scalar_proj.bias": {
+    "__tensor__": "/attempt_encoder/scalar_proj.bias"
+   },
+   "gru.weight_ih_l0": {
+    "__tensor__": "/attempt_encoder/gru.weight_ih_l0"
+   },
+   "gru.weight_hh_l0": {
+    "__tensor__": "/attempt_encoder/gru.weight_hh_l0"
+   },
+   "gru.bias_ih_l0": {
+    "__tensor__": "/attempt_encoder/gru.bias_ih_l0"
+   },
+   "gru.bias_hh_l0": {
+    "__tensor__": "/attempt_encoder/gru.bias_hh_l0"
+   },
+   "summary_head.weight": {
+    "__tensor__": "/attempt_encoder/summary_head.weight"
+   },
+   "summary_head.bias": {
+    "__tensor__": "/attempt_encoder/summary_head.bias"
+   }
+  },
+  "filt": {
+   "episode_encoder.item_proj.net.0.weight": {
+    "__tensor__": "/filt/episode_encoder.item_proj.net.0.weight"
+   },
+   "episode_encoder.item_proj.net.0.bias": {
+    "__tensor__": "/filt/episode_encoder.item_proj.net.0.bias"
+   },
+   "episode_encoder.item_proj.net.2.weight": {
+    "__tensor__": "/filt/episode_encoder.item_proj.net.2.weight"
+   },
+   "episode_encoder.item_proj.net.2.bias": {
+    "__tensor__": "/filt/episode_encoder.item_proj.net.2.bias"
+   },
+   "episode_encoder.prev_proj.weight": {
+    "__tensor__": "/filt/episode_encoder.prev_proj.weight"
+   },
+   "episode_encoder.prev_proj.bias": {
+    "__tensor__": "/filt/episode_encoder.prev_proj.bias"
+   },
+   "knowledge_filter.gru.weight_ih_l0": {
+    "__tensor__": "/filt/knowledge_filter.gru.weight_ih_l0"
+   },
+   "knowledge_filter.gru.weight_hh_l0": {
+    "__tensor__": "/filt/knowledge_filter.gru.weight_hh_l0"
+   },
+   "knowledge_filter.gru.bias_ih_l0": {
+    "__tensor__": "/filt/knowledge_filter.gru.bias_ih_l0"
+   },
+   "knowledge_filter.gru.bias_hh_l0": {
+    "__tensor__": "/filt/knowledge_filter.gru.bias_hh_l0"
+   },
+   "knowledge_filter.mu_head.weight": {
+    "__tensor__": "/filt/knowledge_filter.mu_head.weight"
+   },
+   "knowledge_filter.mu_head.bias": {
+    "__tensor__": "/filt/knowledge_filter.mu_head.bias"
+   },
+   "knowledge_filter.precision_head.weight": {
+    "__tensor__": "/filt/knowledge_filter.precision_head.weight"
+   },
+   "knowledge_filter.precision_head.bias": {
+    "__tensor__": "/filt/knowledge_filter.precision_head.bias"
+   }
+  },
+  "outcome_head": {
+   "trunk.net.0.weight": {
+    "__tensor__": "/outcome_head/trunk.net.0.weight"
+   },
+   "trunk.net.0.bias": {
+    "__tensor__": "/outcome_head/trunk.net.0.bias"
+   },
+   "trunk.net.2.weight": {
+    "__tensor__": "/outcome_head/trunk.net.2.weight"
+   },
+   "trunk.net.2.bias": {
+    "__tensor__": "/outcome_head/trunk.net.2.bias"
+   },
+   "prefix_proj.weight": {
+    "__tensor__": "/outcome_head/prefix_proj.weight"
+   },
+   "prefix_proj.bias": {
+    "__tensor__": "/outcome_head/prefix_proj.bias"
+   },
+   "gamma.weight": {
+    "__tensor__": "/outcome_head/gamma.weight"
+   },
+   "gamma.bias": {
+    "__tensor__": "/outcome_head/gamma.bias"
+   },
+   "beta.weight": {
+    "__tensor__": "/outcome_head/beta.weight"
+   },
+   "beta.bias": {
+    "__tensor__": "/outcome_head/beta.bias"
+   },
+   "outcome.weight": {
+    "__tensor__": "/outcome_head/outcome.weight"
+   },
+   "outcome.bias": {
+    "__tensor__": "/outcome_head/outcome.bias"
+   }
+  },
+  "test_vector_head": {
+   "trunk.net.0.weight": {
+    "__tensor__": "/test_vector_head/trunk.net.0.weight"
+   },
+   "trunk.net.0.bias": {
+    "__tensor__": "/test_vector_head/trunk.net.0.bias"
+   },
+   "trunk.net.2.weight": {
+    "__tensor__": "/test_vector_head/trunk.net.2.weight"
+   },
+   "trunk.net.2.bias": {
+    "__tensor__": "/test_vector_head/trunk.net.2.bias"
+   },
+   "prefix_proj.weight": {
+    "__tensor__": "/test_vector_head/prefix_proj.weight"
+   },
+   "prefix_proj.bias": {
+    "__tensor__": "/test_vector_head/prefix_proj.bias"
+   },
+   "gamma.weight": {
+    "__tensor__": "/test_vector_head/gamma.weight"
+   },
+   "gamma.bias": {
+    "__tensor__": "/test_vector_head/gamma.bias"
+   },
+   "beta.weight": {
+    "__tensor__": "/test_vector_head/beta.weight"
+   },
+   "beta.bias": {
+    "__tensor__": "/test_vector_head/beta.bias"
+   },
+   "outcome.weight": {
+    "__tensor__": "/test_vector_head/outcome.weight"
+   },
+   "outcome.bias": {
+    "__tensor__": "/test_vector_head/outcome.bias"
+   }
+  },
+  "hyper": {
+   "net.0.weight": {
+    "__tensor__": "/hyper/net.0.weight"
+   },
+   "net.0.bias": {
+    "__tensor__": "/hyper/net.0.bias"
+   },
+   "net.2.weight": {
+    "__tensor__": "/hyper/net.2.weight"
+   },
+   "net.2.bias": {
+    "__tensor__": "/hyper/net.2.bias"
+   }
+  },
+  "basis": {
+   "model.language_model.layers.0.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.0.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.0.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.0.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.0.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.0.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.1.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.1.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.1.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.1.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.1.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.1.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.2.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.2.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.2.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.2.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.2.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.2.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.3.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.3.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.3.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.3.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.3.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.3.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.4.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.4.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.4.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.4.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.4.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.4.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.5.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.5.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.5.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.5.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.5.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.5.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.6.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.6.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.6.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.6.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.6.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.6.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.7.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.7.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.7.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.7.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.7.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.7.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.8.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.8.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.8.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.8.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.8.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.8.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.9.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.9.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.9.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.9.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.9.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.9.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.10.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.10.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.10.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.10.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.10.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.10.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.11.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.11.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.11.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.11.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.11.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.11.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.12.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.12.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.12.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.12.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.12.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.12.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.13.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.13.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.13.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.13.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.13.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.13.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.14.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.14.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.14.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.14.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.14.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.14.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.15.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.15.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.15.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.15.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.15.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.15.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.16.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.16.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.16.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.16.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.16.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.16.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.17.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.17.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.17.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.17.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.17.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.17.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.18.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.18.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.18.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.18.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.18.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.18.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.19.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.19.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.19.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.19.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.19.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.19.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.20.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.20.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.20.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.20.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.20.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.20.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.21.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.21.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.21.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.21.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.21.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.21.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.22.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.22.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.22.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.22.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.22.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.22.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.23.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.23.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.23.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.23.self_attn.v_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.23.self_attn.v_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.23.self_attn.v_proj/B"
+    }
+   },
+   "model.language_model.layers.24.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.24.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.24.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.25.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.25.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.25.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.26.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.26.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.26.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.27.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.27.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.27.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.28.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.28.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.28.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.29.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.29.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.29.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.30.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.30.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.30.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.31.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.31.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.31.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.32.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.32.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.32.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.33.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.33.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.33.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.34.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.34.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.34.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.35.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.35.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.35.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.36.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.36.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.36.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.37.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.37.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.37.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.38.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.38.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.38.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.39.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.39.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.39.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.40.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.40.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.40.self_attn.q_proj/B"
+    }
+   },
+   "model.language_model.layers.41.self_attn.q_proj": {
+    "A": {
+     "__tensor__": "/basis/model.language_model.layers.41.self_attn.q_proj/A"
+    },
+    "B": {
+     "__tensor__": "/basis/model.language_model.layers.41.self_attn.q_proj/B"
+    }
+   }
+  },
+  "architecture": {
+   "latent_dim": 32,
+   "episode_hidden": 64,
+   "filter_hidden": 64,
+   "attempt_proj_dim": 32,
+   "attempt_hidden": 64,
+   "summary_dim": 16,
+   "codec_dim": 64
+  },
+  "token_loss_weight": 1.0,
+  "outcome_loss_weight": 0.3,
+  "test_vector_loss_weight": 0.1,
+  "ratchet_checkpoint_sha256": "8d22b6914e041dfa88bf911b1a498fa0c87af30488b07f6e49a72adca731c544",
+  "learner_split_sha256": "c6b8eb8c45e3ff9313a02493a40966a5ec98a09f2780a5adebfb0fc6b26b7237",
+  "git_sha": "unknown",
+  "seed": 0,
+  "sampler_semantics": "reparameterize_from_log_sigma_v1_2026-08-15",
+  "step": 341,
+  "max_test_cases": 32,
+  "held_out_items": [
+   51,
+   56,
+   57,
+   64,
+   70,
+   112,
+   118
+  ],
+  "codec_path": "transforms/problem_mean_L15.npz",
+  "train_regime": "cw_sim_full_run.py --filter-mode joint",
+  "epochs": 1.9941520467836258,
+  "headline_metrics": {
+   "arms": {
+    "personalised": {
+     "n": 18158,
+     "token_nll_mean": 0.148970365524292,
+     "exact_match_rate": 0.15579909086227417,
+     "top1_rate": 0.9604315161705017
+    },
+    "dw0": {
+     "n": 18158,
+     "token_nll_mean": 0.34834980964660645,
+     "exact_match_rate": 0.0,
+     "top1_rate": 0.9222095012664795
+    },
+    "shuffled_u": {
+     "n": 18000,
+     "token_nll_mean": 0.14966580271720886,
+     "exact_match_rate": 0.15549999475479126,
+     "top1_rate": 0.9602310061454773
+    },
+    "u_mean": {
+     "n": 18158,
+     "token_nll_mean": 0.15335048735141754,
+     "exact_match_rate": 0.14902521669864655,
+     "top1_rate": 0.9597863554954529
+    }
+   },
+   "personalisation_gap_token_nll": -0.0006954371929168701,
+   "personalisation_gap_ci": {
+    "point_delta": -0.000721275806427002,
+    "ci95": [
+     -0.0009116943925619126,
+     -0.0005604498088359834
+    ],
+    "excludes_zero": true,
+    "n_boot": 2000,
+    "n_learners": 110,
+    "n_rows": 18000,
+    "n_rows_intersection": 18000
+   }
+  },
+  "canary9_belief_dependence": null
+ }
+}

@@ -1,0 +1,64 @@
+{
+  "status": "complete",
+  "metric_direction": "lower_is_better",
+  "bar": "sim_actor beats random and every blind heuristic on real held-out replay",
+  "bar_pass": false,
+  "policies": {
+    "sim_actor": [
+      0.22879458689989396,
+      0.15455309970315517,
+      0.31741999185412945
+    ],
+    "random": [
+      0.25520275857346164,
+      0.18429357853547265,
+      0.33427401705080406
+    ],
+    "greedy_epig": [
+      0.2502035655890935,
+      0.16791917518798183,
+      0.344781328243987
+    ],
+    "max_entropy": [
+      0.2467645455677753,
+      0.187134866821487,
+      0.3129859013889682
+    ],
+    "difficulty_matched": [
+      0.3116063703939897,
+      0.22140868839239697,
+      0.4231216310735888
+    ],
+    "replay_actor_reference": null
+  },
+  "comparisons": {
+    "difficulty_matched": {
+      "beats": false,
+      "actor_minus_comparator": -0.08281178349409574
+    },
+    "greedy_epig": {
+      "beats": false,
+      "actor_minus_comparator": -0.021408978689199554
+    },
+    "max_entropy": {
+      "beats": false,
+      "actor_minus_comparator": -0.01796995866788134
+    },
+    "random": {
+      "beats": false,
+      "actor_minus_comparator": -0.026408171673567682
+    }
+  },
+  "real_rows_in_training": 0,
+  "real_rows_in_selection": 0,
+  "exam_source": "real_heldout_replay",
+  "disclosures": [
+    "Outcome-faithful/style-generic environment (probe 0.62\u20130.65, panel C \u0394\u22480.0005).",
+    "Stationarity within the diagnostic session is assumed: b_full defines the student-as-of-now, and imagined answers are drawn from that student \u2014 'what would they do if asked today' \u2014 not from their historical selves. The measured size of the historical-drift caveat is V3's 0.7225, disclosed beside every curve; within-session learning from the asked questions themselves is the action-effect channel, explicitly outside this claim's scope.",
+    "b_full plays the part the real student plays at deployment \u2014 it generates answers and defines success; it is never an input to the deployed policy."
+  ],
+  "start": 10,
+  "budget": 5,
+  "n_learners": 102,
+  "primary": "sim_actor_vs_random"
+}

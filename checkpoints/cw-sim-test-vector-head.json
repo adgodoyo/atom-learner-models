@@ -1,0 +1,159 @@
+{
+ "release_name": "cw-sim-test-vector-head",
+ "materialize_to": "results/cw_sim_tv_head_refresh/final.pt",
+ "config": {
+  "architecture": {
+   "latent_dim": 32,
+   "episode_hidden": 64,
+   "filter_hidden": 64,
+   "attempt_proj_dim": 32,
+   "attempt_hidden": 64,
+   "summary_dim": 16,
+   "codec_dim": 64
+  },
+  "attempt_encoder": {
+   "code_proj.weight": {
+    "__tensor__": "/attempt_encoder/code_proj.weight"
+   },
+   "code_proj.bias": {
+    "__tensor__": "/attempt_encoder/code_proj.bias"
+   },
+   "diff_proj.weight": {
+    "__tensor__": "/attempt_encoder/diff_proj.weight"
+   },
+   "diff_proj.bias": {
+    "__tensor__": "/attempt_encoder/diff_proj.bias"
+   },
+   "scalar_proj.weight": {
+    "__tensor__": "/attempt_encoder/scalar_proj.weight"
+   },
+   "scalar_proj.bias": {
+    "__tensor__": "/attempt_encoder/scalar_proj.bias"
+   },
+   "gru.weight_ih_l0": {
+    "__tensor__": "/attempt_encoder/gru.weight_ih_l0"
+   },
+   "gru.weight_hh_l0": {
+    "__tensor__": "/attempt_encoder/gru.weight_hh_l0"
+   },
+   "gru.bias_ih_l0": {
+    "__tensor__": "/attempt_encoder/gru.bias_ih_l0"
+   },
+   "gru.bias_hh_l0": {
+    "__tensor__": "/attempt_encoder/gru.bias_hh_l0"
+   },
+   "summary_head.weight": {
+    "__tensor__": "/attempt_encoder/summary_head.weight"
+   },
+   "summary_head.bias": {
+    "__tensor__": "/attempt_encoder/summary_head.bias"
+   }
+  },
+  "filt": {
+   "episode_encoder.item_proj.net.0.weight": {
+    "__tensor__": "/filt/episode_encoder.item_proj.net.0.weight"
+   },
+   "episode_encoder.item_proj.net.0.bias": {
+    "__tensor__": "/filt/episode_encoder.item_proj.net.0.bias"
+   },
+   "episode_encoder.item_proj.net.2.weight": {
+    "__tensor__": "/filt/episode_encoder.item_proj.net.2.weight"
+   },
+   "episode_encoder.item_proj.net.2.bias": {
+    "__tensor__": "/filt/episode_encoder.item_proj.net.2.bias"
+   },
+   "episode_encoder.prev_proj.weight": {
+    "__tensor__": "/filt/episode_encoder.prev_proj.weight"
+   },
+   "episode_encoder.prev_proj.bias": {
+    "__tensor__": "/filt/episode_encoder.prev_proj.bias"
+   },
+   "knowledge_filter.gru.weight_ih_l0": {
+    "__tensor__": "/filt/knowledge_filter.gru.weight_ih_l0"
+   },
+   "knowledge_filter.gru.weight_hh_l0": {
+    "__tensor__": "/filt/knowledge_filter.gru.weight_hh_l0"
+   },
+   "knowledge_filter.gru.bias_ih_l0": {
+    "__tensor__": "/filt/knowledge_filter.gru.bias_ih_l0"
+   },
+   "knowledge_filter.gru.bias_hh_l0": {
+    "__tensor__": "/filt/knowledge_filter.gru.bias_hh_l0"
+   },
+   "knowledge_filter.mu_head.weight": {
+    "__tensor__": "/filt/knowledge_filter.mu_head.weight"
+   },
+   "knowledge_filter.mu_head.bias": {
+    "__tensor__": "/filt/knowledge_filter.mu_head.bias"
+   },
+   "knowledge_filter.precision_head.weight": {
+    "__tensor__": "/filt/knowledge_filter.precision_head.weight"
+   },
+   "knowledge_filter.precision_head.bias": {
+    "__tensor__": "/filt/knowledge_filter.precision_head.bias"
+   }
+  },
+  "test_vector_head": {
+   "trunk.net.0.weight": {
+    "__tensor__": "/test_vector_head/trunk.net.0.weight"
+   },
+   "trunk.net.0.bias": {
+    "__tensor__": "/test_vector_head/trunk.net.0.bias"
+   },
+   "trunk.net.2.weight": {
+    "__tensor__": "/test_vector_head/trunk.net.2.weight"
+   },
+   "trunk.net.2.bias": {
+    "__tensor__": "/test_vector_head/trunk.net.2.bias"
+   },
+   "prefix_proj.weight": {
+    "__tensor__": "/test_vector_head/prefix_proj.weight"
+   },
+   "prefix_proj.bias": {
+    "__tensor__": "/test_vector_head/prefix_proj.bias"
+   },
+   "gamma.weight": {
+    "__tensor__": "/test_vector_head/gamma.weight"
+   },
+   "gamma.bias": {
+    "__tensor__": "/test_vector_head/gamma.bias"
+   },
+   "beta.weight": {
+    "__tensor__": "/test_vector_head/beta.weight"
+   },
+   "beta.bias": {
+    "__tensor__": "/test_vector_head/beta.bias"
+   },
+   "outcome.weight": {
+    "__tensor__": "/test_vector_head/outcome.weight"
+   },
+   "outcome.bias": {
+    "__tensor__": "/test_vector_head/outcome.bias"
+   }
+  },
+  "max_test_cases": 32,
+  "sigma_parameterization": "precision_accumulating",
+  "source": "ratchet-cwsim/refreshed-tv-head",
+  "ratchet_cwsim_checkpoint": "results/cw_sim_base_run/final.pt",
+  "ratchet_cwsim_checkpoint_sha256": "3143d05122957e855b2067f9bd9c61cd7aabf414b380ffc5fc2e46a0ccf7c3e9",
+  "tv_head_refresh_recipe": {
+   "epochs": 60,
+   "lr": 0.001,
+   "seed": 0,
+   "learner_batch_size": 32,
+   "test_vector_loss_weight": 1.0,
+   "optimizer": "Adam",
+   "filter_frozen": true,
+   "first_attempt_oversample_ratio": 2.75,
+   "oversample_stats": {
+    "n_first_attempt_matched_train": 4333,
+    "n_later_attempt_matched_train": 11933,
+    "ratio": 2.75
+   },
+   "loss_first_epoch_mean": 0.5422107468951832,
+   "loss_last_epoch_mean": 0.3462091941725124,
+   "null_prefix_embedding": false
+  },
+  "git_sha": "f005527aa95c4141fbb1a1c46fbb2ccb9577e9b8"
+ }
+}

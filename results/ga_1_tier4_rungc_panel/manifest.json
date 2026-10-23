@@ -1,0 +1,54 @@
+{
+  "lane": "T4",
+  "rung": "B",
+  "stage": "panel",
+  "substrate": "ratchet-cwsim/refreshed-head",
+  "model": "google/gemma-4-E4B",
+  "checkpoint_revision": "411aa17b749aa952df1359d2dcea73917a544d9a",
+  "decode": {
+    "do_sample": true,
+    "temperature": 0.8,
+    "top_p": 1.0,
+    "max_new_tokens": 128,
+    "min_new_tokens": 8,
+    "note": "greedy is tier 2's measured degenerate case and is never used"
+  },
+  "arms": [
+    "zero_shot|history",
+    "zero_shot|no_history",
+    "zero_shot|swapped_history",
+    "tuned|history",
+    "tuned|no_history",
+    "tuned|swapped_history"
+  ],
+  "n_states": 320,
+  "n_generations": 1920,
+  "seeds": [
+    20260902
+  ],
+  "starts": [
+    3,
+    5,
+    10
+  ],
+  "canaries": {
+    "menu_budget_leak": "pass",
+    "no_history_prompt_identical": "pass",
+    "empty_generation": "pass",
+    "codec_evaluated_with_adapter_off": true
+  },
+  "n_training_runs": 1,
+  "disclosures": [
+    "single training run \u2014 no seed-level clustering is possible and none is claimed",
+    "MOVEMENT claim about the generative distribution, never a question-quality claim and never 'novel questions help students'.",
+    "On a 50-question corpus partial memorisation is EXPECTED; the memorisation panel reports it rather than hiding it.",
+    "Manifold support 0.90 is a reference line, not a gate; a failure is a result.",
+    "The instruments are the mind-model's own codec/EPIG, by design; this is not an independent judgement of question quality.",
+    "Tuned no-history rows are OUT OF THE TRAINING DISTRIBUTION: under the warm draw (\u00a74.8) the tuned model never saw an empty history. Reference line only.",
+    "Rung A's \u00db instrument validation used the OLD COLD DRAW (start 0, 11.1% cold rows). It stands as registered because it is an instrument-validation claim and not a personalisation claim -- but the draws did not match, and this says so.",
+    "PRIMARY pointing is the realised-r percentile of the projected menu item. EPIG percentile is SECONDARY: rung A measured Spearman(EPIG, true r) within a state at only 0.07-0.10, so an EPIG-percentile null is NOT evidence that the signal failed to shape generation -- the training signal is r, and the panel scores against it.",
+    "The no-history arm is 110 generations per model (one per learner, reused across that learner's starts). The no-history prompt is a single identical string, so the former 440 rows were resamples of it; pairing was by index under matched batch seeds and never true CRN, and the bootstrap is learner-clustered, so no statistic changes meaning.",
+    "History-sensitivity's HEADLINE is the swapped-history contrast, not history-vs-no-history: every history block prints the completed exercise's own statement and CW's assignment order is fixed, so a with/without gap is substantially curriculum position rather than the person."
+  ],
+  "elapsed_s": 4771.031194925308
+}

@@ -1,0 +1,38 @@
+{
+  "checkpoint_sha256": "e32b85e69722e56bf53f88ec0acb4ca214f0e259321323659de94368505f0022",
+  "handoff_sha256": "d81e361abc0b185dfd395bba5e4e74428fd2e077766916a835003ae624515597",
+  "fit_learners": 543,
+  "n_train_episodes": 503,
+  "n_simulated_validation_episodes": 40,
+  "n_corpus_records": 32896,
+  "corpus_manifest": {
+    "schema_version": "im-s3-dream-manifest-v1",
+    "corpus_path": "results/sim2real_w/generations.jsonl",
+    "n_records": 32896,
+    "checkpoint_sha256": "e32b85e69722e56bf53f88ec0acb4ca214f0e259321323659de94368505f0022",
+    "seed": 20260904,
+    "batch_size": 16,
+    "allowed_source_splits": [
+      "train"
+    ],
+    "class_counts": {
+      "0": 8224,
+      "1": 8224,
+      "2": 8224,
+      "3": 8224
+    },
+    "raw_text_uploaded": false,
+    "licence_class": "licensed_student_code"
+  },
+  "menu_cap": 16,
+  "budgets": [
+    3,
+    5,
+    10
+  ],
+  "training_source": "simulator",
+  "selection_source": "simulated_validation",
+  "real_outcome_rows_in_training": 0,
+  "real_rows_in_selection": 0,
+  "raw_text_uploaded": false
+}

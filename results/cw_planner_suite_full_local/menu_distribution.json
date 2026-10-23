@@ -1,0 +1,202 @@
+{
+  "train_start0": {
+    "n_learners": 679,
+    "uncapped_quantiles_min_p10_p25_median_p75_p90_max": [
+      1.0,
+      25.0,
+      40.0,
+      48.0,
+      54.0,
+      64.0,
+      135.0
+    ],
+    "capped_at_50_quantiles": [
+      1.0,
+      25.0,
+      40.0,
+      48.0,
+      50.0,
+      50.0,
+      50.0
+    ],
+    "semester_counts": {
+      "S19": 349,
+      "F19": 330
+    }
+  },
+  "train_start3": {
+    "n_learners": 679,
+    "uncapped_quantiles_min_p10_p25_median_p75_p90_max": [
+      1.0,
+      22.0,
+      37.0,
+      45.0,
+      51.0,
+      61.0,
+      132.0
+    ],
+    "capped_at_50_quantiles": [
+      1.0,
+      22.0,
+      37.0,
+      45.0,
+      50.0,
+      50.0,
+      50.0
+    ],
+    "semester_counts": {
+      "S19": 349,
+      "F19": 330
+    }
+  },
+  "train_start5": {
+    "n_learners": 677,
+    "uncapped_quantiles_min_p10_p25_median_p75_p90_max": [
+      1.0,
+      20.0,
+      35.0,
+      43.0,
+      49.0,
+      59.0,
+      130.0
+    ],
+    "capped_at_50_quantiles": [
+      1.0,
+      20.0,
+      35.0,
+      43.0,
+      49.0,
+      50.0,
+      50.0
+    ],
+    "semester_counts": {
+      "S19": 347,
+      "F19": 330
+    }
+  },
+  "train_start10": {
+    "n_learners": 657,
+    "uncapped_quantiles_min_p10_p25_median_p75_p90_max": [
+      1.0,
+      20.0,
+      33.0,
+      38.0,
+      45.0,
+      54.39999999999998,
+      125.0
+    ],
+    "capped_at_50_quantiles": [
+      1.0,
+      20.0,
+      33.0,
+      38.0,
+      45.0,
+      50.0,
+      50.0
+    ],
+    "semester_counts": {
+      "S19": 328,
+      "F19": 329
+    }
+  },
+  "val_start0": {
+    "n_learners": 110,
+    "uncapped_quantiles_min_p10_p25_median_p75_p90_max": [
+      1.0,
+      16.8,
+      38.25,
+      47.5,
+      54.0,
+      64.10000000000001,
+      81.0
+    ],
+    "capped_at_50_quantiles": [
+      1.0,
+      16.8,
+      38.25,
+      47.5,
+      50.0,
+      50.0,
+      50.0
+    ],
+    "semester_counts": {
+      "F19": 53,
+      "S19": 57
+    }
+  },
+  "val_start3": {
+    "n_learners": 109,
+    "uncapped_quantiles_min_p10_p25_median_p75_p90_max": [
+      2.0,
+      18.800000000000004,
+      36.0,
+      45.0,
+      51.0,
+      61.2,
+      78.0
+    ],
+    "capped_at_50_quantiles": [
+      2.0,
+      18.800000000000004,
+      36.0,
+      45.0,
+      50.0,
+      50.0,
+      50.0
+    ],
+    "semester_counts": {
+      "F19": 53,
+      "S19": 56
+    }
+  },
+  "val_start5": {
+    "n_learners": 109,
+    "uncapped_quantiles_min_p10_p25_median_p75_p90_max": [
+      1.0,
+      16.800000000000004,
+      34.0,
+      43.0,
+      49.0,
+      59.2,
+      76.0
+    ],
+    "capped_at_50_quantiles": [
+      1.0,
+      16.800000000000004,
+      34.0,
+      43.0,
+      49.0,
+      50.0,
+      50.0
+    ],
+    "semester_counts": {
+      "F19": 53,
+      "S19": 56
+    }
+  },
+  "val_start10": {
+    "n_learners": 102,
+    "uncapped_quantiles_min_p10_p25_median_p75_p90_max": [
+      1.0,
+      20.400000000000006,
+      32.25,
+      38.0,
+      44.75,
+      54.900000000000006,
+      71.0
+    ],
+    "capped_at_50_quantiles": [
+      1.0,
+      20.400000000000006,
+      32.25,
+      38.0,
+      44.75,
+      50.0,
+      50.0
+    ],
+    "semester_counts": {
+      "F19": 53,
+      "S19": 49
+    }
+  }
+}

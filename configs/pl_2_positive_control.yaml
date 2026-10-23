@@ -1,0 +1,49 @@
+# Synthetic planted-world positive control for the planner -- PRE-REGISTERED, frozen before
+# the run. The control must pass before any real-data planner claim, and confidence alone
+# is never rewarded.
+#
+# The gate is stated here, in advance, so that "greedy-EPIG must beat random with a stated
+# margin" cannot become "greedy-EPIG beat random by whatever it happened to beat it by".
+
+task: pl_2_positive_control
+seed: 0
+
+world:
+  latent_dim: 2                 # theta in R^2, theta ~ N(0, I)
+  codec_dim: 16                 # dims 0..1 = loading a, dim 2 = difficulty b, rest nuisance
+  diag_loading: 2.0             # ||a|| for diagnostic items (fixed norm, random direction)
+  easy_b: 2.2                   # easy items: p == sigmoid(2.2) ~ 0.900 for EVERY learner
+  nuisance_std: 0.5
+  grid_half_width: 4.5          # exact-Bayes grid over theta
+  grid_n_per_dim: 61            # 61 x 61 = 3721 points; convergence checked against 81 in the pilot
+
+episode:
+  n_learners: 150
+  prefix_n: 12                  # natural history before the candidate window
+  # Candidate pool composition. Base rate of the ONLY informative family is 1/3, so a
+  # policy picking at random scores 0.333 on the diagnostic-pick rate by construction.
+  n_cand_diagnostic: 10
+  n_cand_trap: 10               # p == 0.5 exactly: MAXIMUM entropy, ZERO information
+  n_cand_easy: 10               # p == 0.900 exactly: low entropy, ZERO information
+  n_target: 15                  # targets are diagnostic items, disjoint from the pool
+  budget: 5                     # within the 4-8 asks per episode the planner is designed for
+  k: 64                         # belief samples, as in the real-data replays
+  policies: [greedy_evsi, random, max_entropy, max_epistemic]
+  v_flavor: jensen              # the corrected (Jensen-gap) value; the `total` flavour is a contrast used only on real data
+
+gate:
+  # G1 PRIMARY -- greedy-EPIG must beat random by a stated margin.
+  # Paired over learners (common random numbers), bootstrap n=5000, 95% CI.
+  min_logloss_improvement_vs_random: 0.01   # nats, at full budget
+  require_ci_clear_of_zero: true
+  # G2 MECHANISM -- "planted signal detected". Two of the three families carry EXACTLY zero
+  # information, so a correct implementation should pick almost only diagnostic items.
+  # Pool base rate is 0.333; the bar is deliberately far above it.
+  min_diagnostic_pick_rate: 0.90
+  # G3 is REPORTED, never pass/fail: max_entropy's trap-pick rate, the EPIG-vs-BALD
+  # contrast on a world where the right answer is known. Either value is publishable.
+  bootstrap_n: 5000
+  ci_alpha: 0.05
+
+pilot:
+  n_learners: 5                 # a small pilot always precedes the full run

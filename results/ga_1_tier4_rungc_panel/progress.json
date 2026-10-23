@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-09-06T11:37:42Z",
+  "stage": "score_generations",
+  "done": 1920,
+  "total": 1920,
+  "elapsed_s": 4768.380478382111,
+  "stage_elapsed_s": 0.0,
+  "projected_stage_s": 9900.0,
+  "fuse_minutes": 330
+}

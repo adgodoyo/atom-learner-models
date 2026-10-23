@@ -1,0 +1,360 @@
+{
+ "court": {
+  "source": "results/fa_sim3_full_run/predictions.csv.gz",
+  "n_rows": 4977,
+  "n_learners": 500,
+  "label": "y = (true_class == 0) = UNAIDED_CORRECT",
+  "base_rate": 0.6174,
+  "y_equals_platform_score_frac": 0.998995
+ },
+ "protocol_notes": {
+  "irt_court_rows_in_calib_half": 2664,
+  "irt_court_rows_in_eval_half": 2313,
+  "irt_causal_cold_start_rows": 49,
+  "irt_causal_median_prefix": 155,
+  "akt_scoreable_court_rows": 4914,
+  "akt_unscoreable_reason": "chunk position 0 -- no in-chunk history (pyKT convention)",
+  "majority_constant": 0.6154,
+  "threshold": 0.5,
+  "nboot": 1000,
+  "boot_seed": 20260824
+ },
+ "results": {
+  "full_court": {
+   "ATOM (personalised)": {
+    "n": 4977,
+    "n_learners": 500,
+    "base_rate": 0.6174,
+    "auc": 0.785,
+    "accuracy": 0.7356,
+    "acc_when_student_correct": 0.8327,
+    "acc_when_student_wrong": 0.5788,
+    "n_student_correct": 3073,
+    "n_student_wrong": 1904,
+    "balanced_accuracy": 0.7057,
+    "ece": 0.03,
+    "brier": 0.1792,
+    "pred_positive_rate": 0.6753,
+    "auc_ci95": [
+     0.7686,
+     0.7994
+    ],
+    "acc_when_student_correct_ci95": [
+     0.8146,
+     0.851
+    ],
+    "acc_when_student_wrong_ci95": [
+     0.5453,
+     0.6098
+    ]
+   },
+   "ATOM (shuffled-u control)": {
+    "n": 4977,
+    "n_learners": 500,
+    "base_rate": 0.6174,
+    "auc": 0.5882,
+    "accuracy": 0.5945,
+    "acc_when_student_correct": 0.726,
+    "acc_when_student_wrong": 0.3824,
+    "n_student_correct": 3073,
+    "n_student_wrong": 1904,
+    "balanced_accuracy": 0.5542,
+    "ece": 0.1375,
+    "brier": 0.261,
+    "pred_positive_rate": 0.6845,
+    "auc_ci95": [
+     0.5725,
+     0.6036
+    ],
+    "acc_when_student_correct_ci95": [
+     0.7112,
+     0.7434
+    ],
+    "acc_when_student_wrong_ci95": [
+     0.3621,
+     0.4042
+    ]
+   },
+   "AKT v2 (skill tags)": {
+    "n": 4914,
+    "note": "AKT cannot score the 4,977-row court in full; see akt_common_court"
+   },
+   "IRT-2PL v2 (causal theta)": {
+    "n": 4977,
+    "n_learners": 500,
+    "base_rate": 0.6174,
+    "auc": 0.782,
+    "accuracy": 0.7306,
+    "acc_when_student_correct": 0.8428,
+    "acc_when_student_wrong": 0.5494,
+    "n_student_correct": 3073,
+    "n_student_wrong": 1904,
+    "balanced_accuracy": 0.6961,
+    "ece": 0.0457,
+    "brier": 0.1835,
+    "pred_positive_rate": 0.6928,
+    "auc_ci95": [
+     0.766,
+     0.7962
+    ],
+    "acc_when_student_correct_ci95": [
+     0.8272,
+     0.8589
+    ],
+    "acc_when_student_wrong_ci95": [
+     0.5214,
+     0.5778
+    ]
+   },
+   "Majority": {
+    "n": 4977,
+    "n_learners": 500,
+    "base_rate": 0.6174,
+    "auc": 0.5,
+    "accuracy": 0.6174,
+    "acc_when_student_correct": 1.0,
+    "acc_when_student_wrong": 0.0,
+    "n_student_correct": 3073,
+    "n_student_wrong": 1904,
+    "balanced_accuracy": 0.5,
+    "ece": 0.0021,
+    "brier": 0.2362,
+    "pred_positive_rate": 1.0,
+    "auc_ci95": [
+     0.5,
+     0.5
+    ],
+    "acc_when_student_correct_ci95": [
+     1.0,
+     1.0
+    ],
+    "acc_when_student_wrong_ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "akt_common_court": {
+   "ATOM (personalised)": {
+    "n": 4914,
+    "n_learners": 500,
+    "base_rate": 0.6188,
+    "auc": 0.7864,
+    "accuracy": 0.7365,
+    "acc_when_student_correct": 0.8333,
+    "acc_when_student_wrong": 0.5793,
+    "n_student_correct": 3041,
+    "n_student_wrong": 1873,
+    "balanced_accuracy": 0.7063,
+    "ece": 0.0313,
+    "brier": 0.1784,
+    "pred_positive_rate": 0.676,
+    "auc_ci95": [
+     0.77,
+     0.8004
+    ],
+    "acc_when_student_correct_ci95": [
+     0.815,
+     0.8517
+    ],
+    "acc_when_student_wrong_ci95": [
+     0.5482,
+     0.6113
+    ]
+   },
+   "ATOM (shuffled-u control)": {
+    "n": 4914,
+    "n_learners": 500,
+    "base_rate": 0.6188,
+    "auc": 0.5875,
+    "accuracy": 0.5946,
+    "acc_when_student_correct": 0.7261,
+    "acc_when_student_wrong": 0.3812,
+    "n_student_correct": 3041,
+    "n_student_wrong": 1873,
+    "balanced_accuracy": 0.5536,
+    "ece": 0.138,
+    "brier": 0.2612,
+    "pred_positive_rate": 0.6852,
+    "auc_ci95": [
+     0.5719,
+     0.6039
+    ],
+    "acc_when_student_correct_ci95": [
+     0.7114,
+     0.7429
+    ],
+    "acc_when_student_wrong_ci95": [
+     0.3602,
+     0.4039
+    ]
+   },
+   "AKT v2 (skill tags)": {
+    "n": 4914,
+    "n_learners": 500,
+    "base_rate": 0.6188,
+    "auc": 0.8101,
+    "accuracy": 0.7532,
+    "acc_when_student_correct": 0.8527,
+    "acc_when_student_wrong": 0.5916,
+    "n_student_correct": 3041,
+    "n_student_wrong": 1873,
+    "balanced_accuracy": 0.7222,
+    "ece": 0.0225,
+    "brier": 0.168,
+    "pred_positive_rate": 0.6834,
+    "auc_ci95": [
+     0.7945,
+     0.8239
+    ],
+    "acc_when_student_correct_ci95": [
+     0.8377,
+     0.8673
+    ],
+    "acc_when_student_wrong_ci95": [
+     0.5612,
+     0.6207
+    ]
+   },
+   "IRT-2PL v2 (causal theta)": {
+    "n": 4914,
+    "n_learners": 500,
+    "base_rate": 0.6188,
+    "auc": 0.7819,
+    "accuracy": 0.731,
+    "acc_when_student_correct": 0.8435,
+    "acc_when_student_wrong": 0.5483,
+    "n_student_correct": 3041,
+    "n_student_wrong": 1873,
+    "balanced_accuracy": 0.6959,
+    "ece": 0.0459,
+    "brier": 0.1834,
+    "pred_positive_rate": 0.6941,
+    "auc_ci95": [
+     0.7653,
+     0.7965
+    ],
+    "acc_when_student_correct_ci95": [
+     0.828,
+     0.8592
+    ],
+    "acc_when_student_wrong_ci95": [
+     0.5205,
+     0.577
+    ]
+   },
+   "Majority": {
+    "n": 4914,
+    "n_learners": 500,
+    "base_rate": 0.6188,
+    "auc": 0.5,
+    "accuracy": 0.6188,
+    "acc_when_student_correct": 1.0,
+    "acc_when_student_wrong": 0.0,
+    "n_student_correct": 3041,
+    "n_student_wrong": 1873,
+    "balanced_accuracy": 0.5,
+    "ece": 0.0035,
+    "brier": 0.2359,
+    "pred_positive_rate": 1.0,
+    "auc_ci95": [
+     0.5,
+     0.5
+    ],
+    "acc_when_student_correct_ci95": [
+     1.0,
+     1.0
+    ],
+    "acc_when_student_wrong_ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "irt_published_protocol": {
+   "note": "IRT under its own published calib/eval protocol, restricted to the court rows that fall in the eval half (the other 2,664 would be in-sample).",
+   "IRT-2PL v2 (published protocol)": {
+    "n": 2313,
+    "n_learners": 496,
+    "base_rate": 0.6278,
+    "auc": 0.7771,
+    "accuracy": 0.7298,
+    "acc_when_student_correct": 0.8512,
+    "acc_when_student_wrong": 0.525,
+    "n_student_correct": 1452,
+    "n_student_wrong": 861,
+    "balanced_accuracy": 0.6881,
+    "ece": 0.0423,
+    "brier": 0.1841,
+    "pred_positive_rate": 0.7112,
+    "auc_ci95": [
+     0.7542,
+     0.7986
+    ],
+    "acc_when_student_correct_ci95": [
+     0.8295,
+     0.8721
+    ],
+    "acc_when_student_wrong_ci95": [
+     0.4854,
+     0.5693
+    ]
+   },
+   "IRT-2PL v2 (causal theta, same rows)": {
+    "n": 2313,
+    "n_learners": 496,
+    "base_rate": 0.6278,
+    "auc": 0.7935,
+    "accuracy": 0.7449,
+    "acc_when_student_correct": 0.8623,
+    "acc_when_student_wrong": 0.547,
+    "n_student_correct": 1452,
+    "n_student_wrong": 861,
+    "balanced_accuracy": 0.7046,
+    "ece": 0.0493,
+    "brier": 0.1775,
+    "pred_positive_rate": 0.7099,
+    "auc_ci95": [
+     0.7722,
+     0.8139
+    ],
+    "acc_when_student_correct_ci95": [
+     0.8403,
+     0.883
+    ],
+    "acc_when_student_wrong_ci95": [
+     0.5036,
+     0.5914
+    ]
+   },
+   "ATOM (personalised, same rows)": {
+    "n": 2313,
+    "n_learners": 496,
+    "base_rate": 0.6278,
+    "auc": 0.7927,
+    "accuracy": 0.7466,
+    "acc_when_student_correct": 0.8512,
+    "acc_when_student_wrong": 0.5703,
+    "n_student_correct": 1452,
+    "n_student_wrong": 861,
+    "balanced_accuracy": 0.7107,
+    "ece": 0.0338,
+    "brier": 0.1732,
+    "pred_positive_rate": 0.6943,
+    "auc_ci95": [
+     0.7693,
+     0.8132
+    ],
+    "acc_when_student_correct_ci95": [
+     0.8266,
+     0.8739
+    ],
+    "acc_when_student_wrong_ci95": [
+     0.5244,
+     0.6142
+    ]
+   }
+  }
+ },
+ "wall_s": 1067.4
+}

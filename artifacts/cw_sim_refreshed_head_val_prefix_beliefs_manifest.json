@@ -1,0 +1,12 @@
+{
+  "n_rows": 5452,
+  "n_val_learners": 110,
+  "release_composition": {
+    "F19": 3034,
+    "S19": 2418
+  },
+  "checkpoint": "results/cw_sim_head_refresh/final.pt",
+  "checkpoint_sha256": "e32b85e69722e56bf53f88ec0acb4ca214f0e259321323659de94368505f0022",
+  "file_sha256": "10ca4e9aea005b76346e1b18ae501a3d973417b562cb26fe1654647418125c03",
+  "mu_dim": 32
+}

@@ -1,0 +1,43 @@
+{
+ "release_name": "utility-model-seed20260904",
+ "materialize_to": "results/ga_1_tier4_utility/utility_seed20260904.pt",
+ "config": {
+  "utility": {
+   "enc.0.weight": {
+    "__tensor__": "/utility/enc.0.weight"
+   },
+   "enc.0.bias": {
+    "__tensor__": "/utility/enc.0.bias"
+   },
+   "enc.2.weight": {
+    "__tensor__": "/utility/enc.2.weight"
+   },
+   "enc.2.bias": {
+    "__tensor__": "/utility/enc.2.bias"
+   },
+   "state.0.weight": {
+    "__tensor__": "/utility/state.0.weight"
+   },
+   "state.0.bias": {
+    "__tensor__": "/utility/state.0.bias"
+   },
+   "out.0.weight": {
+    "__tensor__": "/utility/out.0.weight"
+   },
+   "out.0.bias": {
+    "__tensor__": "/utility/out.0.bias"
+   },
+   "out.2.weight": {
+    "__tensor__": "/utility/out.2.weight"
+   },
+   "out.2.bias": {
+    "__tensor__": "/utility/out.2.bias"
+   }
+  },
+  "seed": 20260904,
+  "selected_epoch": 7,
+  "best_internal_rank_acc": 0.5531309304668891,
+  "epochs_run": 12,
+  "stopping_reason": "patience"
+ }
+}

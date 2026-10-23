@@ -1,0 +1,28 @@
+# Majority and IRT-2PL baselines. All numeric settings live here, not in code.
+
+# Within-learner calibrate/eval split for val+test learners (item params frozen from TRAIN,
+# theta estimated from the learner's own first calib_frac of their chronological history,
+# evaluated on the rest -- mirrors how the filter will predict future from past).
+# calib_frac is the canonical, gated protocol; it is never retargeted to fit the gate band
+# (see the baseline script's docstring).
+calib_frac: 0.5
+# sensitivity_calib_frac: an ADDITIONAL informational row (short calibration burn-in), not a
+# replacement -- gives a second IRT number for the baseline table.
+sensitivity_calib_frac: 0.2
+min_interactions: 6   # need >=3 calib + >=3 eval; skip learners below this (none expected)
+
+train_epochs: 300
+train_lr: 0.05
+calib_epochs: 300
+calib_lr: 0.05
+
+# MAP (Gaussian-prior) regularisation weights.
+l2_theta: 0.05
+l2_log_a: 0.05
+l2_b: 0.01
+
+seed: 42
+
+# Gate: IRT test AUC sanity band.
+gate_auc_lo: 0.68
+gate_auc_hi: 0.76
