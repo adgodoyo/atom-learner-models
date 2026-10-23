@@ -1,5 +1,9 @@
 name: ci
 on: [push, pull_request]
+env:
+  # one fixed CPU code path, so results do not vary with the runner's processor
+  MKL_CBWR: COMPAT
+  ATEN_CPU_CAPABILITY: default
 jobs:
   test:
     runs-on: ubuntu-latest
